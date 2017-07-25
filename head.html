@@ -1,0 +1,157 @@
+<!--头部导航部分-->
+<div class="nav-top-wrap">
+	<div class="nav-top">
+		<span>所在城市&nbsp;:&nbsp;<strong class="area">郑州市高新区</strong>&nbsp;<b>▼</b></span>
+		<strong><span ng-show="usersBol">{{phoneNum}}</span><span ng-click="toWhere('/logoIn')" ng-hide="usersBol">登录</span><span ng-click="toWhere('/signUp')" ng-hide="usersBol">注册</span><span ng-click="toWhere('/my-order')">我的订单</span><span ng-click="toWhere('/my-msg')">我的消息</span><span>我是商家</span><span><em></em>090---22511</span></strong>
+	</div>
+</div>
+<div class="nav-middle-wrap">
+	<div class="nav-middle" ng-show="bol">
+		<a ng-click="toIndex()"><img src="img/logo.png" alt="" /></a>
+		<div class="search">
+			<input id="searches" type="text" placeholder="请输入关键字进行搜索" />
+			<span ng-click="search()"></span>
+			<strong>热门:
+							<span>杂粮饭</span>
+							<span>辣椒酱</span>
+							<span>水果礼篮</span>
+							<span>擦玻璃</span>
+							<span>蟹肉棒</span>
+							<span>苹果</span>
+						</strong>
+		</div>
+		<div class="users" ng-click="toWhere('/center')">
+			<em></em>
+			<span>个人中心</span>
+		</div>
+		<div class="shop-car" ng-click="shopCar()">
+			<a>
+				<em></em>
+				<span>购物车</span>
+				<strong>{{shopCarArr.length}}</strong>
+			</a>
+		</div>
+	</div>
+	<div class="nav-shopcar" ng-hide="bol">
+		<a ng-click="toIndex()"><img src="img/logo.png" alt="" /></a>
+		<span>
+			<strong class="shopcar-active">我的购物车</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<strong>确认订单信息</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<strong>订单提交成功</strong>
+		</span>
+	</div>
+</div>
+<div class="index-class-wrap" ng-show="bol">
+	<ul class="index-class">
+		<li>
+			<strong>全部分类</strong>
+			<ol>
+				<li ng-repeat="item in movieClassArr track by $index" ng-click="movieFilter($index)"><em></em><span>{{item}}</span>
+					<ul>
+						<li ng-repeat="its in movieClassArr track by $index" ng-click="movieFilter($index)">{{its}}</li>
+						<!--<li>进口水果</li>
+						<li>有机水果</li>
+						<li>国产水果</li>-->
+					</ul>
+				</li>
+				<!--<li><em></em><span>田园蔬菜</span>
+					<ul>
+						<li>蔬菜礼篮</li>
+						<li>有机蔬菜</li>
+						<li>地产蔬菜</li>
+						<li>进口蔬菜</li>
+					</ul>
+				</li>
+				<li><em></em><span>肉类家禽</span>
+					<ul>
+						<li>羊肉</li>
+						<li>牛肉</li>
+						<li>鸡鸭肉</li>
+						<li>鱼肉</li>
+					</ul>
+				</li>
+				<li><em></em><span>海鲜水产</span>
+					<ul>
+						<li>海鲜礼盒</li>
+						<li>国产海鲜</li>
+						<li>进口海鲜</li>
+						<li>干货其他</li>
+					</ul>
+				</li>
+				<li><em></em><span>优选食材</span>
+					<ul>
+						<li>优选米面</li>
+						<li>优选杂粮</li>
+						<li>粮油调味</li>
+						<li>其他食材</li>
+					</ul>
+				</li>
+				<li><em></em><span>零食酒水</span>
+					<ul>
+						<li>零食</li>
+						<li>特色干果</li>
+						<li>休闲冲饮</li>
+						<li>茶叶</li>
+						<li>白酒</li>
+						<li>啤酒</li>
+						<li>葡萄酒</li>
+						<li>其他酒品</li>
+					</ul>
+				</li>
+				<li><em></em><span>蛋奶速食</span>
+					<ul>
+						<li>方便速食</li>
+						<li>奶制品</li>
+						<li>面包甜点</li>
+						<li>蛋品</li>
+					</ul>
+				</li>
+				<li><em></em><span>全球代购</span>
+					<ul>
+						<li>保健品</li>
+						<li>洗护用品</li>
+						<li>农副产品</li>
+						<li>母婴用品</li>
+					</ul>
+				</li>-->
+				<li class="nav-class3"></li>
+			</ol>
+		</li>
+		<li class="index-class-active nav" ng-click="toWhere('/index')"><span>首页</span></li>
+		<li class="nav" ng-click="toWhere('/severser')"><span>同城</span></li>
+		<li class="nav" ng-click="toWhere('/libaiwu')"><span>礼拜五</span></li>
+		<li class="nav" ng-click="toWhere('/integral-shop')"><span>积分商城</span></li>
+	</ul>
+</div>
+<!--城市切换-->
+<div class="alert-city">
+	<div class="alert-city-img">
+		<span class="site">建议你的收货地址 : </span>
+		<div class="info">
+			<div id="show">
+				<select id="s_province" name="s_province"></select>
+				<select id="s_city" name="s_city"></select>
+				<select id="s_county" name="s_county"></select>
+			</div>
+		</div>
+		<button>保存</button>
+	</div>
+</div>
+<script class="resources library" src="js/area.js" type="text/javascript"></script>
+<script type="text/javascript">
+	_init_area();
+</script>
+<script type="text/javascript">
+	//切换导航
+	$(".index-class .nav").on("click", function() {
+		$(this).addClass("index-class-active").siblings().removeClass("index-class-active");
+	});
+	$(".area").on("click", function() {
+		$(".alert-city").show();
+		$(".alert-city button").on("click",function() {
+			$(".area").text($("#s_city").val()+$("#s_county").val());
+			$(".alert-city").fadeOut();
+		});
+	});
+	
+</script>

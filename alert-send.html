@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/reset.css" />
+		<title>有商品不支持配送提示</title>
+		<style>
+			.alert-send{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		background:rgba(0,0,0,0.5);
+		}
+		.alert-send-box{
+		width: 680px;
+		height: 440px;
+		position: absolute;
+		overflow: hidden;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin:auto;
+		background: white;
+		border: 4px solid #DBDBDB;
+		}
+		.alert-send-box p{
+		height: 70px;
+		color: #3D842F;
+		font-size: 20px;
+		line-height: 70px;
+		padding-left: 30px;
+		border-bottom: 1px solid #D5D5D5;
+		}
+		.alert-send-box img{
+		float: left;
+		margin-top: 90px;
+		margin-left: 110px;
+		
+		}
+		.alert-send-box span{
+		width: 300px;
+		display: inline-block;
+		float: left;
+		}
+		.alert-send-box .send-box-write1{
+		color: #EA6E06;
+		font-size: 20px;
+		margin-top: 100px;
+		margin-left: 45px;
+		
+		}
+		.alert-send-box .send-box-write2{
+		color: #6E706E;
+		height:30px;
+		line-height: 30px;
+		margin-top:20px;
+		margin-left: 45px;
+		
+		}
+		.alert-send-box button{
+		float: left;
+		width: 190px;
+		height: 36px;
+		color: white;
+		outline: none;
+		cursor: pointer;
+		font-size: 20px;
+		margin-top: 170px;
+		border-radius: 5px;
+		}
+		.alert-send-box .send-box-btn1{
+		margin-left: -450px;
+		background: #EA6E06;
+		border: 1px solid #EA6E06;
+		}
+		.alert-send-box .send-box-btn2{
+		margin-left: -200px;
+		background: #3D842F;
+		border: 1px solid #3D842F;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="alert-send">
+			<div class="alert-send-box">
+				<p>温馨提示</p>
+				<img src="img/提示.png"/>
+				<span class="send-box-write1">新疆哈密瓜 (8kg装)、葡萄 (150g)</span>
+				<span class="send-box-write2">无法送达到指定区域,请到购物车中删除商品或修改配送地址后重新提交订单</span>
+				<button class="send-box-btn1">返回购物车修改</button>
+				<button class="send-box-btn2">修改配送区域</button>
+			</div>
+		</div>
+	</body>
+</html>

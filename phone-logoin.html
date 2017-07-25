@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.phone-logoin {
+				width: 100%;
+				height: 500px;
+				margin-top: 30px;
+				border: 1px solid transparent;
+				background: url(img/anrentukucom.png) no-repeat;
+				position: relative;
+			}
+			
+			.phone-logoin .out {
+				width: 400px;
+				height: 200px;
+				border: 1px solid white;
+				margin: 0 auto;
+				position: relative;
+				top: 50%;
+				margin-top: -100px;
+				text-align: center;
+			}
+			
+			.phone-logoin .inner {
+				position: relative;
+				left: 50%;
+				top: 50%;
+				margin: -75px 0 0 -170px;
+				width: 340px;
+				height: 150px;
+				border: 1px solid white;
+			}
+			
+			.phone-logoin .inner span {
+				display: block;
+				font-size: 45px;
+				color: white;
+				margin-top: 10px;
+			}
+			
+			.phone-logoin .reg {
+				width: 400px;
+				height: 500px;
+				border: 1px solid lightgray;
+				background: white;
+				position: absolute;
+				top: 0;
+				left: 65%;
+			}
+			
+			.phone-logoin .login {
+				width: 85%;
+				margin-left: 20px;
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.phone-logoin .login li:nth-child(1) {
+				font-size: 30px;
+			}
+			
+			.phone-logoin .reg_part {
+				vertical-align: middle;
+			}
+			
+			.phone-logoin .reg_part span {
+				display: inline-block;
+				font-size: 18px;
+			}
+			
+			.phone-logoin .reg_part strong {
+				display: inline-block;
+				margin-top: 10px;
+			}
+			
+			.phone-logoin .reg_part span a {
+				color: black;
+			}
+			
+			.phone-logoin .jiemian {
+				margin-left: 23px;
+				/*border: 1px solid red;*/
+			}
+			
+			.phone-logoin .jiemian li {
+				width: 90%;
+			}
+			
+			.phone-logoin .jiemian li input {
+				width: 100%;
+				margin-top: 20px;
+				height: 40px;
+				border: 1px solid lightgray;
+				outline: none;
+			}
+			
+			.phone-logoin .mas input:nth-child(1) {
+				width: 100px;
+				margin-right: 20px;
+			}
+			
+			.phone-logoin .mas input:nth-child(2) {
+				width: 100px;
+				margin-right: 10px;
+			}
+			
+			.phone-logoin .tphone {
+				position: relative;
+			}
+			
+			.phone-logoin .tphone button {
+				position: absolute;
+				left: 230px;
+				top: 24px;
+				color: white;
+				width: 100px;
+				height: 35px;
+				border: none;
+				outline: none;
+				border-radius: 5px;
+				background: rgb(59, 126, 46);
+			}
+			
+			.phone-logoin .mas button {
+				outline: none;
+				border: none;
+				color: rgb(234, 110, 6);
+				background: white;
+			}
+			
+			.phone-logoin .member {
+				margin-top: 30px;
+				display: flex;
+				justify-content: space-between;
+				width: 90%;
+			}
+			
+			.phone-logoin .member button {
+				width: 100px;
+				height: 35px;
+				border: none;
+				outline: none;
+				border-radius: 5px;
+				color: white;
+			}
+			
+			.phone-logoin .member button:nth-child(1) {
+				background: rgb(234, 110, 6);
+			}
+			
+			.phone-logoin .member button:nth-child(2) {
+				background: rgb(59, 126, 46);
+			}
+			
+			.phone-logoin .tips {
+				margin: 10px 0 10px 0;
+			}
+			
+			.phone-logoin .parter {
+				width: 90%;
+				text-align: center;
+				margin-bottom: 10px;
+			}
+			
+			.phone-logoin .msg {
+				display: inline-block;
+				background: url(img/矢量智能对象.png) no-repeat;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				border: 1px solid rgb(58, 200, 13);
+				background-position: center center;
+			}
+			
+			.phone-logoin .chat {
+				display: inline-block;
+				background: url(img/矢量智能对象qq.png) no-repeat;
+				background-position: center center;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				border: 1px solid rgb(63, 159, 229);
+			}
+			
+			.phone-logoin .teamwork {
+				width: 90%;
+				text-align: center;
+			}
+			
+			.phone-logoin .teamwork span {
+				margin-right: 10px;
+			}
+			
+			.phone-logoin .deng {
+				/*border: 1px solid red;*/
+				width: 90%;
+				margin-top: 20px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			
+			.phone-logoin .deng input {
+				width: 16px;
+				height: 16px;
+				border: 1px solid lightgray;
+				margin-right: -180px;
+			}
+			
+			.phone-logoin .deng input:checked:before {
+				content: "";
+				float: left;
+				width: 10px;
+				height: 10px;
+				background: black;
+				border-radius: 50%;
+				transform: translate(2px, 2px);
+			}
+			
+			.phone-logoin .deng span a {
+				color: rgb(234, 110, 6);
+			}
+			
+			#code {
+				background: lightcyan;
+			}
+			
+			.tipss {
+				margin-top: 4px;
+				margin-bottom: -15px;
+				border: 1px solid transparent;
+				color: red;
+				font-size: 13px;
+				height: 17px;
+			}
+			
+			.tipss,
+			.tipsss {
+				margin-top: 4px;
+				margin-bottom: -15px;
+				border: 1px solid transparent;
+				color: red;
+				font-size: 13px;
+				height: 17px;
+			}
+			
+			.tip {
+				/*border: 1px solid red;*/
+				width: 100px;
+				height: 33px;
+				line-height: 33px;
+				/*font-size: 16px;*/
+				/*text-align: center;*/
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	</head>
+
+	<body>
+		<div class="phone-logoin">
+			<div class="out">
+				<div class="inner">
+					<span>礼拜五会员</span>
+					<span>免费注册</span>
+				</div>
+			</div>
+			<!--注册的页面-->
+			<div class="reg">
+				<ul class="login">
+					<li>登录</li>
+					<li class="reg_part">
+						<span><a href="javascript:void(0)">账号密码登录</a></span>
+						<strong class="user"><img src="img/icon.png" alt="" /></strong>
+					</li>
+				</ul>
+				<!--登录-->
+				<ul class="jiemian">
+					<li>
+						<input type="text" placeholder="请输入手机号" class="telephone" />
+						<p class="tipss"></p>
+					</li>
+
+					<li class="mas">
+						<input type="text" placeholder="验证码" id="msg" />
+						<input type="text" id="code" />
+						<span><button id="change">看不清换一张</button></span>
+						<p class="tipsss"></p>
+					</li>
+					<li class="tphone"><input type="text" placeholder="手机验证码" />
+						<button>获取验证码</button>
+					</li>
+					<div class="deng">
+						<input type="checkbox" />自动登录
+						<span ng-click="toWhere('/forget')"><a href="javascript:void(0)">忘记密码?</a></span>
+					</div>
+					<li class="member">
+						<button id="log">登录</button>
+						<button id="reg">会员注册</button>
+						<p class="tip"></p>
+					</li>
+					<li class="tips">
+						<span>提示 : 未注册用户将直接注册成礼拜五用户</span>
+					</li>
+					<li class="parter">
+						<span>------------------用合作网站登录---------------</span>
+					</li>
+					<li class="teamwork">
+						<a href="javascript:void(0)"><span class="msg"></span></a>
+						<a href="javascript:void(0)"><span class="chat"></span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/code.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//手机号码的正则验证
+		$(".telephone").focus(function() {
+
+			$(".telephone").css("border", "1px solid lightskyblue");
+
+			$(".tipss").text("");
+
+		})
+
+		$(".telephone").blur(function() {
+
+			var tel = $(".telephone").val();
+
+			var reg = /^1[3578]\d{9}$/;
+
+			if(tel.length == 0) {
+
+				$(".tipss").text("*手机号不能为空").css("color", "red");
+
+			} else if(!reg.test(tel)) {
+
+				$(".tipss").text("*手机号格式错误").css("color", "red");
+
+			} else {
+
+				$(".tipss").text("");
+			}
+
+			$(".telephone").css("border", "1px solid lightgray");
+
+		})
+		//验证码框的判断
+
+		$("#msg").blur(function() {
+
+			var msgVal = $("#msg").val();
+
+			var codeVal = $("#code").val();
+
+			if(msgVal.length == 0) {
+
+				$(".tipsss").text("*请输入验证码").css("color", "red");
+
+			} else if(msgVal != codeVal) {
+
+				$(".tipsss").text("*验证码有误").css("color", "red");
+
+			} else {
+				$(".tipsss").text("");
+			}
+
+		})
+
+		$("#msg").focus(function() {
+
+			$("#msg").css("border", "1px solid lightskyblue");
+
+		})
+
+		//点注册按钮的时候
+		$("#reg").on("click", function() {
+
+			if($(".telephone").val() == "" || $("#msg").val() == "") {
+
+				alert("!手机号或验证码不能为空");
+
+				return;
+
+			}
+			$.ajax({
+				type: "get",
+				url: "php/reg.php",
+				data: {
+					phoneNum: $(".telephone").val()
+				},
+				success: function(data) {
+					$(".tip").text(data);
+					window.sessionStorage.phoneNum = $(".telephone").val();
+					window.location.href = 'index.html';
+				}
+			});
+
+		})
+
+		//点击登录按钮的时候
+		$("#log").on("click", function() {
+
+			if($(".telephone").val() == "" || $("#msg").val() == "") {
+
+				alert("!手机号或验证码不能为空");
+
+				return;
+
+			}
+
+			$.ajax({
+
+				type: "get",
+				url: "php/load.php",
+				data: {
+
+					phoneNum: $(".telephone").val()
+				},
+				success: function(data) {
+					$(".tip").text(data);
+					if(data == "登录成功") {
+						window.sessionStorage.phoneNum = $(".telephone").val();
+						window.location.href = "index.html";
+					} else {
+						return;
+					}
+
+				}
+			});
+
+		})
+
+		//聚焦的时候
+		$("#pnumber").focus(function() {
+
+			$("#pnumber").css("border", "1px solid lightskyblue");
+		})
+		if(window.location.href.indexOf("#/logoIn")) {
+			//登录页面
+			$(".search").hide();
+			$(".users").hide();
+			$(".shop-car").hide();
+			$(".index-class-wrap").hide();
+		} else {
+			$(".search").show().siblings().show();
+
+			$(".index-class-wrap").show();
+		}
+	</script>
+
+</html>

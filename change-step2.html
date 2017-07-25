@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.change-step2 {
+				width: 1280px;
+			}
+			
+			.change-step2 .change {
+				border-bottom: 1px solid lightgray;
+			}
+			
+			.change-step2 .change h4 {
+				font-size: 18px;
+				line-height: 50px;
+				margin-left: 20px;
+			}
+			
+			.change-step2 .yz {
+				margin: 20px 0 0 20px;
+			}
+			
+			.change-step2 .yz span {
+				display: inline-block;
+				width: 236px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.change-step2 .yz span:nth-child(1) {
+				background: url(img/矩形hh.png) no-repeat;
+			}
+			
+			.change-step2 .yz span:nth-child(2) {
+				width: 250px;
+				background: url(img/矩形拷贝.png) no-repeat;
+			}
+			
+			.change-step2 .yz span:nth-child(3) {
+				background: url(img/矩形three.png) no-repeat;
+			}
+			
+			.phone,
+			.ma,
+			.suiji,
+			.password {
+				margin-left: 20px;
+				margin-top: 20px;
+			}
+			
+			.password {
+				position: relative;
+			}
+			
+			.change-step2 .phone input {
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			
+			.change-step2 .password input {
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			
+			.change-step2 .ma input:nth-child(1) {
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			
+			.change-step2 .code {
+				width: 100px;
+				height: 35px;
+				margin-left: 30px;
+				outline: none;
+				border: 1px solid lightgrey;
+				text-align: center;
+			}
+			
+			.change-step2 .ma {
+				display: inline-block;
+			}
+			
+			.change-step2 .btn {
+				margin: 20px 0 0 20px;
+				width: 150px;
+				height: 50px;
+				background: rgb(234, 110, 6);
+				border-radius: 10px;
+				outline: none;
+				color: white;
+				border: none;
+			}
+			
+			.change-step2 .click a {
+				color: black;
+			}
+			
+			.change-step2 .Btn {
+				width: 100px;
+				height: 35px;
+				position: absolute;
+				left: 190px;
+				top: 3px;
+				outline: none;
+				background: rgb(59, 126, 46);
+				outline: none;
+				border: none;
+				color: white;
+			}
+			
+			.change-step2 #codes {
+				background: lightcyan;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li class="center-active">我的账户</li>
+					<li>我的订单</li>
+					<li>我的积分</li>
+					<li>积分订单</li>
+					<li>我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li>个人资料</li>
+					<li>地址管理</li>
+					<li>我的收藏</li>
+					<li>最近浏览</li>
+					<li>修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li>我的消息</li>
+					<li>意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<!--中间内容-->
+				<div class="change-step2">
+
+					<div class="change">
+						<h4>换绑手机</h4>
+					</div>
+
+					<div class="yz">
+						<span>1.验证原手机号</span>
+						<span>2.验证新手机号</span>
+						<span>3.换帮成功</span>
+					</div>
+
+					<div class="phone"><input type="text" placeholder="请输入新手机号" /></div>
+
+					<div class="ma">
+						<input type="text" placeholder="验证码" />
+						<input type="text" class="code" id="codes" />
+					</div>
+
+					<span class="click"><a href="javascript:void(0)" id="change">看不清换一张</a></span>
+
+					<div class="password">
+						<input type="text" placeholder="手机验证码" />
+						<button class="Btn">获取验证码</button>
+					</div>
+
+					<button class="btn">提交验证</button>
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		//在全局定义验证码
+		var code;
+		//产生验证码
+			code = "";
+			var codeLength = 4; //验证码的长度
+			var random = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+				'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+			];
+			for(var i = 0; i < codeLength; i++) { //循环操作
+				var index = Math.floor(Math.random() * 36); //取得随机数的索引（0~35）
+				code += random[index]; //根据索引取得随机数加到code上
+			}
+			$("#codes").val(code);
+		//		当点击看不清换一张的时候 改变验证码
+		$("#change").on("click", function() {
+			code = "";
+			var codeLength = 4; //验证码的长度
+			var random = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+				'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+			];
+			for(var i = 0; i < codeLength; i++) { //循环操作
+				var index = Math.floor(Math.random() * 36); //取得随机数的索引（0~35）
+				code += random[index]; //根据索引取得随机数加到code上
+			}
+			$("#codes").val(code); //把code值赋给验证码
+		})
+	</script>
+
+</html>

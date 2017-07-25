@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/reset.css" />
+		<title>我的订单-为空页面</title>
+		<style>
+			.my-order-none {
+				width: 1080px;
+			}
+			.order-none-indent {
+				height: 64px;
+				color: #535353;
+				font-size: 18px;
+				line-height: 64px;
+				padding-left: 24px;
+				border-bottom: 1px solid #D5D5D5;
+			}
+			
+			.order-none-box {
+				line-height: 50px;
+				font-size: 14px;
+				color: #535353;
+				margin-top: 22px;
+				margin-left: 22px;
+			}
+			
+			.order-none-box span:nth-child(2n+1) {
+				display: inline-block;
+				cursor: pointer;
+				width: 75px;
+				height: 32px;
+				text-align: center;
+				line-height: 32px;
+			}
+			
+			.order-none-box span:nth-child(2n+1):hover {
+				background: #E26D00;
+				color: white;
+			}
+			
+			.order-none-box span:nth-child(1) {
+				display: inline-block;
+				width: 60px;
+				height: 32px;
+				text-align: center;
+				line-height: 32px;
+			}
+			
+			.order-none-box span:nth-child(11) {
+				width: 95px;
+			}
+			
+			.order-none-box span:nth-child(13) {
+				width: 110px;
+			}
+			
+			.none-box-public {
+				background: #E26D00;
+				color: white;
+			}
+			
+			.order-none-box span:nth-child(2n) {
+				display: inline-block;
+				width: 1px;
+				height: 15px;
+				margin-left: 20px;
+				margin-right: 20px;
+				background: #535353;
+			}
+			
+			.order-none-box span:last-child {
+				cursor: pointer;
+				float: right;
+				width: 75px;
+				height: 20px;
+				color: #458428;
+				background: white;
+			}
+			
+			.none-box-code {
+				display: none;
+				width: 600px;
+				margin: 0 auto;
+				overflow: hidden;
+				text-align: center;
+				margin-top: 200px;
+			}
+			
+			.none-box-code img {
+				float: left;
+				margin-left: 180px;
+			}
+			
+			.none-box-code p {
+				float: right;
+				color: #6E706E;
+				margin-top: 5px;
+				margin-right: 158px;
+				font-size: 20px;
+			}
+			
+			.none-box-code button {
+				float: right;
+				width: 170px;
+				height: 48px;
+				color: white;
+				outline: none;
+				cursor: pointer;
+				font-size: 20px;
+				margin-top: 27px;
+				margin-right: 135px;
+				border-radius: 5px;
+				background: #E26D00;
+				border: 1px solid #E26D00;
+			}
+			
+			.my-order-none table {
+				width: 1044px;
+				overflow: hidden;
+				margin: 0 auto;
+				margin-top: 10px;
+				border: 1px solid #D5D5D5;
+			}
+			
+			.my-order-none table tr:nth-child(1) {
+				height: 53px;
+				font-size: 14px;
+				line-height: 53px;
+				background: #EFEFEF;
+				border-bottom: 1px solid #D5D5D5;
+			}
+			
+			.my-order-none table tr th:nth-child(1) {
+				width: 250px;
+			}
+			
+			.my-order-none table tr th:nth-child(2) {
+				width: 260px;
+			}
+			
+			.my-order-none table tr th:nth-child(3) {
+				width: 190px;
+			}
+			
+			.my-order-none table tr th:nth-child(4) {
+				width: 340px;
+			}
+			
+			.my-order-none table tr th:nth-child(4) span:nth-child(1) {
+				margin-left: 210px;
+			}
+			
+			.my-order-none table tr th:nth-child(4) span:nth-child(2) {
+				color: #E26D00;
+			}
+			
+			.my-order-none table tr td {
+				overflow: hidden;
+			}
+			
+			.my-order-none table tr td:nth-child(1) {
+				overflow: hidden;
+				border-top: 1px solid #D5D5D5;
+				border-right: 1px solid #D5D5D5;
+			}
+			
+			.my-order-none table tr td:nth-child(1) img {
+				float: left;
+				margin-top: 25px;
+				margin-left: 20px;
+			}
+			
+			.my-order-none table tr .order-none-one {
+				float: left;
+				font-size: 14px;
+				margin-top: 55px;
+				margin-left: 20px;
+			}
+			
+			.my-order-none table tr td:nth-child(1) .order-none-tow {
+				float: right;
+				color: #6E706E;
+				font-size: 14px;
+				margin-top: 55px;
+				margin-right: 200px;
+			}
+			
+			.my-order-none table tr td:nth-child(2) p {
+				color: #6E706E;
+				width: 110px;
+				margin-top: 4px;
+				margin-left: 50px;
+				font-size: 14px;
+			}
+			
+			.my-order-none table tr td:nth-child(2) strong {
+				float: right;
+				display: inline-block;
+				width: 1px;
+				height: 213px;
+				margin-top: -127px;
+				margin-right: 130px;
+				background: #D5D5D5;
+			}
+			
+			.my-order-none table tr td:nth-child(2) span {
+				float: right;
+				color: #3D842F;
+				font-size: 14px;
+				margin-right: -95px;
+				margin-top: -75px;
+			}
+			
+			.my-order-none table tr td:nth-child(2) button {
+				width: 91px;
+				height: 32px;
+				float: right;
+				font-size: 14px;
+				margin-right: -112px;
+				border-radius: 5px;
+				background: #EA6E06;
+				outline: none;
+				cursor: pointer;
+				color: white;
+				border: 1px solid #EA6E06;
+				margin-top: -50px;
+			}
+			
+			.my-order-none table tr td:nth-child(2) .order-none-btn1 {
+				margin-top: -10px;
+				background: #6E706E;
+				border: 1px solid #6E706E;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-count')">我的账户</li>
+					<li ng-click="to('/my-order')" class="center-active">我的订单</li>
+					<li ng-click="to('/my-integral')">我的积分</li>
+					<li ng-click="to('/integral-order')">积分订单</li>
+					<li ng-click="to('/my-wallet')">我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/user-information')">个人资料</li>
+					<li ng-click="to('/address-manger')">地址管理</li>
+					<li ng-click="to('/my-fav')">我的收藏</li>
+					<li ng-click="to('/recent')">最近浏览</li>
+					<li ng-click="to('/psd-edit')">修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-msg')">我的消息</li>
+					<li ng-click="to('/feedback')">意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<div class="my-order-none">
+					<h2 class="order-none-indent">
+			我的订单
+			</h2>
+					<div class="order-none-box">
+						<span class="none-box-public">全部</span>
+						<span></span>
+						<span>待付款</span>
+						<span></span>
+						<span>待发货</span>
+						<span></span>
+						<span>待收货</span>
+						<span></span>
+						<span>待评价</span>
+						<span></span>
+						<span>退款/售后</span>
+						<span></span>
+						<span>已完成/关闭</span>
+						<span>订单回收站</span>
+					</div>
+					<div class="none-box-code">
+						<img src="img/形状 20.png" />
+						<p>您还没有订单哦!</p>
+						<button>去首页看看</button>
+					</div>
+					<table>
+						<tr>
+							<th>
+								<span>订单号：20170714101914ah5581</span>
+							</th>
+							<th>
+								<span>下单日期：2017-07-14 10:19:14 </span>
+							</th>
+							<th>
+								<span>礼拜五生鲜</span>
+							</th>
+							<th>
+								<span>订单状态：</span>
+								<span>关闭</span>
+							</th>
+						</tr>
+
+						<tr>
+							<td colspan="3">
+								<img src="img/1496829131309.jpg" />
+								<span class="order-none-one">青柠檬</span>
+								<span class="order-none-tow">¥5x2</span>
+							</td>
+							<td rowspan="2">
+								<p> &nbsp;&nbsp;店铺合计: ¥4</p>
+								<p>（含运费：¥0）</p>
+								<strong></strong>
+								<span>查看详情</span>
+								<button>删除订单</button>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<img src="img/1496829131309.jpg" />
+								<span class="order-none-one">青柠檬</span>
+								<span class="order-none-tow">¥5x2</span>
+							</td>
+						</tr>
+
+					</table>
+
+					<table>
+						<tr>
+							<th>
+								<span>订单号：20170714101914ah5581 </span>
+							</th>
+							<th>
+								<span>下单日期：2017-07-14 10:19:14 </span>
+							</th>
+							<th>
+								<span>礼拜五生鲜</span>
+							</th>
+							<th>
+								<span>订单状态：</span>
+								<span>待支付</span>
+							</th>
+						</tr>
+
+						<tr>
+							<td colspan="3">
+								<img src="img/1496829131309.jpg" />
+								<span class="order-none-one">青柠檬</span>
+								<span class="order-none-tow">¥5x2</span>
+							</td>
+							<td rowspan="2">
+								<p> &nbsp;&nbsp;店铺合计: ¥4</p>
+								<p>（含运费：¥0）</p>
+								<strong></strong>
+								<span>查看详情</span>
+								<button>去支付</button>
+								<button class="order-none-btn1">取消订单</button>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<img src="img/1496829131309.jpg" />
+								<span class="order-none-one">青柠檬</span>
+								<span class="order-none-tow">¥5x2</span>
+							</td>
+						</tr>
+
+					</table>
+
+					<table>
+						<tr>
+							<th>
+								<span>订单号：20170714101914ah5581 </span>
+							</th>
+							<th>
+								<span>下单日期：2017-07-14 10:19:14 </span>
+							</th>
+							<th>
+								<span>礼拜五生鲜</span>
+							</th>
+							<th>
+								<span>订单状态：</span>
+								<span>待发货</span>
+							</th>
+						</tr>
+
+						<tr>
+							<td colspan="3">
+								<img src="img/1496829131309.jpg" />
+								<span class="order-none-one">青柠檬</span>
+								<span class="order-none-tow">¥5x2</span>
+							</td>
+							<td rowspan="2">
+								<p> &nbsp;&nbsp;店铺合计: ¥4</p>
+								<p>（含运费：¥0）</p>
+								<strong></strong>
+								<span>查看详情</span>
+								<button>申请退款</button>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<img src="img/1496829131309.jpg" />
+								<span class="order-none-one">青柠檬</span>
+								<span class="order-none-tow">¥5x2</span>
+							</td>
+						</tr>
+
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	//个人中心切换类名
+	$(".center-left li").on("click", function() {
+		$(".center-left li").removeClass("center-active");
+		$(this).addClass("center-active");
+	});
+	</script>
+
+</html>

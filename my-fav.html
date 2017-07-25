@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style type="text/css">
+			#box {
+				width: 1080px;
+				min-height: 624px;
+			}
+			
+			.my-fav-wrap h3 {
+				font-size: 20px;
+				line-height: 55px;
+				color: #333;
+				padding-left: 20px;
+				padding-right: 20px;
+				border-bottom: 1px solid #E9E9E9;
+			}
+			
+			.my-fav-wrap ul {
+				padding: 20px;
+				overflow: hidden;
+			}
+			
+			.my-fav-wrap ul li {
+				float: left;
+				width: 263px;
+				margin: 20px;
+				padding: 0 20px 20px;
+				border: 1px solid #ececec;
+				overflow: hidden;
+			}
+			
+			.my-fav-wrap ul li img {
+				width: 263px;
+				height: 265px;
+				vertical-align: top;
+			}
+			
+			.my-fav-wrap ul li h4 {
+				font-size: 18px;
+				line-height: 36px;
+				color: #333;
+			}
+			
+			.my-fav-wrap ul li h5 {
+				font-size: 14px;
+				line-height: 28px;
+				color: #666666;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			
+			.my-fav-wrap ul li strong {
+				color: #FF575C;
+				font-size: 24px;
+				line-height: 40px;
+				font-weight: bolder;
+			}
+			
+			.my-fav-wrap ul li span {
+				font-size: 16px;
+				color: #666666;
+				margin-left: 10px;
+				margin-right: 10px;
+				text-decoration: line-through;
+			}
+			
+			.my-fav-wrap ul li em {
+				float: right;
+				width: 32px;
+				height: 30px;
+				background: url(img/shopcar-empty.png) no-repeat;
+				background-size: 100% 100%;
+				cursor: pointer;
+			}
+			
+			.my-fav-wrap ul li b {
+				display: block;
+				margin: 10px auto;
+				width: 150px;
+				height: 36px;
+				line-height: 36px;
+				text-align: center;
+				background: #3D8E43;
+				border-radius: 18px;
+				color: white;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-count')">我的账户</li>
+					<li ng-click="to('/my-order')">我的订单</li>
+					<li ng-click="to('/my-integral')">我的积分</li>
+					<li ng-click="to('/integral-order')">积分订单</li>
+					<li ng-click="to('/my-wallet')">我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/user-information')">个人资料</li>
+					<li ng-click="to('/address-manger')">地址管理</li>
+					<li ng-click="to('/my-fav')" class="center-active">我的收藏</li>
+					<li ng-click="to('/recent')">最近浏览</li>
+					<li ng-click="to('/psd-edit')">修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-msg')">我的消息</li>
+					<li ng-click="to('/feedback')">意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<div id="box">
+					<div class="my-fav-wrap">
+						<h3>我的收藏</h3>
+						<ul class="my-fav">
+							<li>
+								<img src="img/芒果.jpg" />
+								<h4>百吃不厌的芒果</h4>
+								<h5>这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果</h5>
+								<strong>¥&nbsp;28.80</strong>
+								<span>¥&nbsp;40.00</span>
+								<em></em>
+								<b>取消收藏</b>
+							</li>
+							<li>
+								<img src="img/芒果.jpg" />
+								<h4>百吃不厌的芒果</h4>
+								<h5>这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果</h5>
+								<strong>¥&nbsp;28.80</strong>
+								<span>¥&nbsp;40.00</span>
+								<em></em>
+								<b>取消收藏</b>
+							</li>
+							<li>
+								<img src="img/芒果.jpg" />
+								<h4>百吃不厌的芒果</h4>
+								<h5>这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果</h5>
+								<strong>¥&nbsp;28.80</strong>
+								<span>¥&nbsp;40.00</span>
+								<em></em>
+								<b>取消收藏</b>
+							</li>
+							<li>
+								<img src="img/芒果.jpg" />
+								<h4>百吃不厌的芒果</h4>
+								<h5>这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果</h5>
+								<strong>¥&nbsp;28.80</strong>
+								<span>¥&nbsp;40.00</span>
+								<em></em>
+								<b>取消收藏</b>
+							</li>
+							<li>
+								<img src="img/芒果.jpg" />
+								<h4>百吃不厌的芒果</h4>
+								<h5>这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果</h5>
+								<strong>¥&nbsp;28.80</strong>
+								<span>¥&nbsp;40.00</span>
+								<em></em>
+								<b>取消收藏</b>
+							</li>
+							<li>
+								<img src="img/芒果.jpg" />
+								<h4>百吃不厌的芒果</h4>
+								<h5>这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果</h5>
+								<strong>¥&nbsp;28.80</strong>
+								<span>¥&nbsp;40.00</span>
+								<em></em>
+								<b>取消收藏</b>
+							</li>
+							<li>
+								<img src="img/芒果.jpg" />
+								<h4>百吃不厌的芒果</h4>
+								<h5>这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果这是白吃不厌的好吃点的芒果DB芒果</h5>
+								<strong>¥&nbsp;28.80</strong>
+								<span>¥&nbsp;40.00</span>
+								<em></em>
+								<b>取消收藏</b>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	//个人中心切换类名
+	$(".center-left li").on("click", function() {
+		$(".center-left li").removeClass("center-active");
+		$(this).addClass("center-active");
+	});
+	</script>
+
+</html>

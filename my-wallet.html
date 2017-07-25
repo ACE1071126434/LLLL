@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.my-wallet {
+				width: 1080px;
+			}
+			
+			.my-wallet .recharge {
+				margin: 30px 0 0 30px;
+			}
+			
+			.my-wallet>.recharge a {
+				display: inline-block;
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				margin: 10px 40px 0 0;
+				text-align: center;
+				border: 1px solid gainsboro;
+			}
+			
+			.my-wallet>.recharge .actives {
+				background: rgb(242, 255, 239);
+				border: 1px solid rgb(83, 148, 37);
+			}
+			
+			.my-wallet>.gift {
+				margin: 40px 0 0 30px;
+			}
+			
+			.my-wallet>.chong {
+				display: inline-block;
+				margin-left: 30px;
+				margin-top: 20px;
+				color: rgb(234, 110, 6);
+			}
+			
+			.my-wallet>.list ul li {
+				display: inline-block;
+				margin-left: 20px;
+			}
+			
+			.my-wallet .song {
+				position: relative;
+			}
+			
+			.my-wallet .song span {
+				position: absolute;
+				top: 40%;
+				left: 200px;
+			}
+			
+			.my-wallet .song em {
+				position: absolute;
+				top: 60%;
+				left: 200px;
+			}
+			
+			.my-wallet .song>span:nth-child(1) {
+				position: absolute;
+				left: 20px;
+				top: 20px;
+			}
+			
+			.list {
+				display: inline-block;
+				margin-right: 40px;
+			}
+			
+			.Btn {
+				display: block;
+				width: 150px;
+				height: 50px;
+				background: rgb(234, 110, 6);
+				border-radius: 5px;
+				color: white;
+				border: none;
+				outline: none;
+				font-size: 16px;
+				margin-top: 50px;
+			}
+			
+			.balance {
+				display: inline-block;
+				margin-top: 20px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid gainsboro;
+				width: 100%;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-count')">我的账户</li>
+					<li ng-click="to('/my-order')">我的订单</li>
+					<li ng-click="to('/my-integral')">我的积分</li>
+					<li ng-click="to('/integral-order')">积分订单</li>
+					<li ng-click="to('/my-wallet')" class="center-active">我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/user-information')">个人资料</li>
+					<li ng-click="to('/address-manger')">地址管理</li>
+					<li ng-click="to('/my-fav')">我的收藏</li>
+					<li ng-click="to('/recent')">最近浏览</li>
+					<li ng-click="to('/psd-edit')">修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-msg')">我的消息</li>
+					<li ng-click="to('/feedback')">意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<!--中间内容-->
+				<div class="my-wallet">
+					<span class="balance">账户余额 : <span>¥20.0</span></span>
+					<div class="recharge">
+						<p>请选择充值金额 : </p>
+						<a href="" class="actives">500</a>
+						<a href="">1000</a>
+						<a href="">2000</a>
+					</div>
+					<!--充值有礼-->
+					<span class="chong">充值有礼</span>
+					<div class="gift">
+						<div class="list">
+							<div class="song">
+								<span>充500元送 : </span>
+								<img src="img/zh.png" />
+								<span>新疆哈密瓜25kg</span>
+								<em>价值 : 500</em>
+							</div>
+						</div>
+						<!--第二个-->
+						<div class="list">
+							<div class="song">
+								<span>充500元送 : </span>
+								<img src="img/zh.png" />
+								<span>新疆哈密瓜25kg</span>
+								<em>价值 : 500</em>
+							</div>
+						</div>
+						<button class="Btn">立即充值</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	//个人中心切换类名
+	$(".center-left li").on("click", function() {
+		$(".center-left li").removeClass("center-active");
+		$(this).addClass("center-active");
+	});
+	</script>
+
+</html>

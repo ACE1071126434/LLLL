@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.change-step2{
+				width: 1080px;
+				position: relative;
+			}
+			.change-step2 .change{
+				border-bottom: 1px solid lightgray;
+			}
+			.change-step2 .change h4{
+				font-size: 18px;
+				line-height: 50px;
+				margin-left: 20px;
+			}
+		.phone,.ma,.suiji,.password,.ps_one,.ps_two{
+				margin-left: 20px;
+				margin-top: 20px;
+				
+			}
+			.password{
+				position: relative;
+			}
+			.change-step2 .phone input{
+				background: rgb(247,247,247);
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			.change-step2 .ps_one input{
+				background: rgb(247,247,247);
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			.change-step2 .ps_two input{
+				background: rgb(247,247,247);
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			.change-step2 .password input{
+				background: rgb(247,247,247);
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			.change-step2 .ma input:nth-child(1){
+				width: 80px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+				background: rgb(247,247,247);
+			}
+			.change-step2 .code{
+				width: 80px;
+				height: 35px;
+				margin-left: 30px;
+				outline: none;
+				border: 1px solid lightgrey;
+				text-align: center;
+				background: rgb(218,250,211);
+			}
+			.change-step2 .ma{
+				display: inline-block;
+			}
+			
+			.change-step2 .btn{
+				margin: 20px 0 0 20px;
+				width: 150px;
+				height: 50px;
+				background: rgb(234,110,6);
+				border-radius:10px ;
+				outline: none;
+				color:white;
+				border: none;
+			}
+			.change-step2 .click button{
+				color: green;
+				border: none;
+				outline: none;
+				background: white;
+			}
+			.change-step2 .Btn{
+					width: 100px;
+					height: 35px;
+					position: absolute;
+					left: 190px;
+					top: 3px;
+					outline: none;
+					background: rgb(59,126,46);
+					outline: none;
+					border: none;
+					color: white;
+			}
+			.change-step2 .tan{
+				width: 300px;
+				height: 150px;
+				text-align: center;
+				position: absolute;
+				left: 640px;
+				top: 178px;
+				border-radius:20px ;
+				background: rgba(0,0,0,0.1);
+				display: none;
+			}
+			.change-step2 .tan strong{
+				background: url(img/对号.png) no-repeat;
+				background-size: cover;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				border-radius:50% ;
+				margin-top: 60px;
+				line-height: 30px;
+				/*background: rgb(234,110,6);*/
+				border: 1px solid lightgray;
+			}
+			.change-step2 .tan span{
+				color: rgb(234,110,6);
+				font-size: 22px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	</head>
+	<body>
+		<!--顶部导航-->
+		
+		<!--中间内容-->
+		<div class="change-step2">
+			
+			<div class="change">
+				<h4>设定密码</h4>
+			</div>
+			
+			
+			<div class="phone"><input type="text" placeholder="请输入手机号" /></div>
+			
+			<div class="ps_one"><input type="password" placeholder="请输入密码(6-20位号码字符)"/></div>
+			<div class="ps_two"><input type="password" placeholder="请再次输入密码确认"/></div>
+			
+			<div class="ma">
+				<input type="text" placeholder="验证码"/>
+				<input type="text" class="code" placeholder="8412" />
+			</div>
+			
+			
+			
+			<span class="click"><button>看不清换一张</button></span>
+			
+			<div class="password">
+				<input type="text" placeholder="手机验证码"/>
+				<button class="Btn">获取验证码</button>
+			</div>
+			
+			<button class="btn">确定</button>
+			
+			
+			<div class="tan">
+				<strong>️️</strong>
+				<span>恭喜您设定成功</span>
+			</div>
+			
+		</div>
+		
+		<!--底部-->
+	</body>
+</html>

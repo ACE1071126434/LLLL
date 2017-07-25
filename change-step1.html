@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li class="center-active">我的账户</li>
+					<li>我的订单</li>
+					<li>我的积分</li>
+					<li>积分订单</li>
+					<li>我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li>个人资料</li>
+					<li>地址管理</li>
+					<li>我的收藏</li>
+					<li>最近浏览</li>
+					<li>修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li>我的消息</li>
+					<li>意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<!--中间内容-->
+				<div class="change-step1">
+					<div class="change">
+						<h4>换绑手机</h4>
+					</div>
+					<div class="yz">
+						<span>1.验证原手机号</span>
+						<span>2.验证新手机号</span>
+						<span>3.换帮成功</span>
+					</div>
+					<div class="phone"><input type="text" placeholder="请输入手机号" /></div>
+					<div class="ma">
+						<input type="text" placeholder="验证码" />
+						<input type="text" class="code" id="codes" />
+					</div>
+					<span class="click"><a href="javascript:void(0)" id="change">看不清换一张</a></span>
+					<div class="password">
+						<input type="text" placeholder="输入密码验证身份" />
+					</div>
+					<button class="btn">提交验证</button>
+				</div>
+
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		//在全局定义验证码
+		var code;
+		//产生验证码
+		code = "";
+		var codeLength = 4; //验证码的长度
+		var random = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+			'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+		];
+		for(var i = 0; i < codeLength; i++) { //循环操作
+			var index = Math.floor(Math.random() * 36); //取得随机数的索引（0~35）
+			code += random[index]; //根据索引取得随机数加到code上
+		}
+		$("#codes").val(code);
+		//		当点击看不清换一张的时候 改变验证码
+		$("#change").on("click", function() {
+			code = "";
+			var codeLength = 4; //验证码的长度
+			var random = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+				'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+			];
+			for(var i = 0; i < codeLength; i++) { //循环操作
+				var index = Math.floor(Math.random() * 36); //取得随机数的索引（0~35）
+				code += random[index]; //根据索引取得随机数加到code上
+			}
+			$("#codes").val(code); //把code值赋给验证码
+		})
+	</script>
+
+</html>

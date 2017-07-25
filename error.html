@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>404</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<style>
+		.error{
+		width: 100%;
+		height: 100%;
+		}
+		.error .error-center{
+		position: relative;
+		width: 800px;
+		height: 600px;
+		margin: 0 auto;
+		margin-top:200px ;
+		text-align: center;
+		}
+		.error .error-center img:nth-child(1){
+		}
+		.error .error-center img:nth-child(2){
+		position: absolute;
+		left: 42%;
+		}
+		.error .error-center>p{
+		position: absolute;
+		width: 800px;
+		left:-2%;
+		padding-top: 7%;
+		
+		}
+		.error .error-center>p span:nth-child(1){
+		font-size: 68px;
+		color: #EA6e06;
+		}
+		.error .error-center>p span:nth-child(2){
+		font-size: 50px;
+		color: #535353;
+		padding-left: 6%;
+		}
+		.error-center h2{
+		position: absolute;
+		top: 55%;
+		left: 14%;
+		font-size: 22px;
+		color: #606060;
+		}
+		.error .error-center-btn{
+		position: absolute;
+		width: 600px;
+		left: 12%;
+		bottom:20%;
+		}
+		.error-center-btn button:nth-child(1){
+		width: 150px;
+		height: 40px;
+		outline: none;
+		color: #FBFAFF;
+		cursor: pointer;
+		font-size: 22px;
+		border-radius: 8%;
+		background:#ea6e06;
+		border: 1px solid #ea6e06;
+		
+		}
+		.error-center-btn button:nth-child(2){
+		margin-left: 15%;
+		width: 150px;
+		height: 40px;
+		color: #FBFAFF;
+		outline: none;
+		font-size: 22px;
+		cursor: pointer;
+		background:#3B7E2E;
+		border-radius: 8%;
+		border: 1px solid #3B7E2E;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="error" ng-controller="errorCtrl">
+			<div class="error-center">
+				<img src="img/4     4.png"/>
+				<img src="img/图层 276.png"/>
+				<p>
+					<span>抱歉!</span>
+					<span>您访问的页面不存在</span>
+				</p>
+				<h2>您要查看的网址可能已被删除、名称已被更改、或者暂时不可用</h2>
+				<div class="error-center-btn">
+					<button id="back">返回上一页面</button>
+					<button id="toHome">返回网页首页</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#back").on("click",function() {
+				window.history.back();
+			});
+			$("#toHome").on("click",function() {
+				window.location.replace('index.html');
+			});
+		});
+	</script>
+</html>

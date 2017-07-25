@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style type="text/css">
+			#box {
+				width: 1080px;
+			}
+			
+			.add-address h3 {
+				padding-left: 20px;
+				line-height: 55px;
+				font-size: 18px;
+				color: #414141;
+				border-bottom: 1px solid #E9E9E9;
+			}
+			
+			.add-address table {
+				margin: 20px;
+				vertical-align: middle;
+			}
+			
+			.add-address td:first-child {
+				width: 120px;
+				font-size: 18px;
+				line-height: 40px;
+				text-align: right;
+			}
+			
+			.add-address tr:nth-child(5) td:before {
+				content: none;
+			}
+			
+			.add-address tr:nth-child(6) td:before {
+				content: none;
+			}
+			
+			.add-address td:first-child:before {
+				content: "*";
+				font-size: 20px;
+				color: #F47535;
+				margin-right: 5px;
+			}
+			
+			.add-address td:last-child {
+				padding-left: 20px;
+			}
+			
+			.add-address td input[type=text] {
+				font-size: 14px;
+				line-height: 30px;
+				padding-left: 10px;
+				padding-right: 10px;
+				border: 1px solid #D3D3D3;
+			}
+			
+			.add-address td select {
+				width: 140px;
+				line-height: 30px;
+				border: 1px solid #D3D3D3;
+				border-radius: 0;
+				background: white;
+				padding-left: 10px;
+				padding-right: 10px;
+				margin-right: 10px;
+			}
+			
+			.add-address tr:nth-child(1) input {
+				width: 310px;
+			}
+			
+			.add-address tr:nth-child(3) input {
+				width: 440px;
+			}
+			
+			.add-address tr:nth-child(4) input:nth-child(1) {
+				width: 145px;
+				margin-right: 10px;
+			}
+			
+			.add-address tr:nth-child(4) input:nth-child(2) {
+				width: 30px;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			
+			.add-address tr:nth-child(4) input:nth-child(3) {
+				width: 105px;
+				margin-left: 10px;
+			}
+			
+			.add-address input[type=checkbox] {
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				line-height: 30px;
+				border: 1px solid #D3D3D3;
+				vertical-align: middle;
+				margin-right: 10px;
+				overflow: hidden;
+			}
+			
+			.add-address input[type=checkbox]:checked:before {
+				content: "";
+				float: left;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: #3D8E43;
+				transform: translate(1px, 1px);
+			}
+			
+			.add-address tr:nth-child(5) {
+				height: 55px;
+				font-size: 14px;
+			}
+			
+			.add-address tr:nth-child(6) {
+				height: 80px;
+			}
+			
+			.add-address tr button {
+				padding-left: 36px;
+				padding-right: 36px;
+				line-height: 36px;
+				color: white;
+				border: none;
+				background: none;
+				border-radius: 5px;
+				font-size: 18px;
+			}
+			
+			.add-address tr button:first-child {
+				background: #999;
+				margin-right: 120px;
+			}
+			
+			.add-address tr button:last-child {
+				background: #F78327;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-count')">我的账户</li>
+					<li ng-click="to('/my-order')">我的订单</li>
+					<li ng-click="to('/my-integral')">我的积分</li>
+					<li ng-click="to('/integral-order')">积分订单</li>
+					<li ng-click="to('/my-wallet')">我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/user-information')">个人资料</li>
+					<li ng-click="to('/address-manger')" class="center-active">地址管理</li>
+					<li ng-click="to('/my-fav')">我的收藏</li>
+					<li ng-click="to('/recent')">最近浏览</li>
+					<li ng-click="to('/psd-edit')">修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-msg')">我的消息</li>
+					<li ng-click="to('/feedback')">意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<div id="box">
+					<div class="add-address">
+
+						<h3>添加新地址</h3>
+						<table border="0">
+							<tr>
+								<td>收货人姓名&nbsp;:</td>
+								<td><input class="name" type="text" placeholder="填写收货人姓名" /></td>
+							</tr>
+							<tr>
+								<td>所在地区&nbsp;:</td>
+								<td>
+
+									<div id="show">
+										<select name="province" id="province">
+											<option value="请选择">请选择</option>
+										</select>
+										<select name="city" id="city">
+											<option value="请选择">请选择</option>
+										</select>
+										<select name="town" id="town">
+											<option value="请选择">请选择</option>
+										</select>
+									</div>
+
+								</td>
+							</tr>
+							<tr>
+								<td>详细地址&nbsp;:</td>
+								<td><input class="address-intro" type="text" placeholder="用于接受货物的详细地址" /></td>
+							</tr>
+							<tr>
+								<td>联系电话&nbsp;:</td>
+								<td><input class="phone" type="text" placeholder="推荐使用手机号" />或固定电话: <input type="text" placeholder="区号" class="tel" />&nbsp;-&nbsp;<input type="text" class="telNum" placeholder="电话号码" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input type="checkbox" />设置为常用地址</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<button class="back">返回</button>
+									<button class="save" ng-click="to('/address-manger')">保存</button>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!--<script src="js/jquery.min.js"></script>-->
+	<script src="js/area2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/select.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".add-address .back").on("click", function() {
+			window.history.back();
+		});
+		//地址管理部分
+		$(".add-address .save").on("click", function() {
+			$.ajax({
+				type: "get",
+				url: "php/address.php",
+				dataType: 'json',
+				data: {
+					flag: "add",
+					name: $(".add-address .name").val(),
+					areas: $("#province").val() + $("#city").val() + $("#town").val(),
+					address: $(".add-address .address-intro").val(),
+					tel: $(".add-address .phone").val() || $(".tel").val() + $(".telNum").val()
+				},
+				success: function(data) {
+					console.log(data);
+					//window.location.replace("#/address-manger");
+				},
+				async: true
+			});
+		});
+	</script>
+
+</html>

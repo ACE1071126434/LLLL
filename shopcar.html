@@ -1,0 +1,57 @@
+<div class="shop-car-wrap">
+	<div class="shopcar-empty">
+		<div>
+			<span></span>
+			<div>
+				<h4>您的购物车是空的</h4>
+				<button><a href="index.html">去首页看看</a></button>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="shopcar-cont">
+		<h3>购物车</h3>
+		<table border="0">
+			<tr class="shop-car-head">
+				<th>
+					<input type="checkbox" />
+					<em>爱果果水果店</em>
+				</th>
+				<th>规格</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>金额</th>
+				<th>操作</th>
+			</tr>
+			<tr ng-repeat="item in shopCarArr track by $index">
+				<td>
+					<input type="checkbox" />
+					<img ng-src="{{item.showImgUrl}}" alt="" />
+					<span>{{item.goodsName}}</span>
+				</td>
+				<td>{{item.standard}}</td>
+				<td>¥{{item.nowPrice}}</td>
+				<td>
+					<div><i class="del" ng-click="del($index)">－</i><input type="text" value="{{item.num}}" ng-bind="item.num"/><i class="add" ng-click="add($index)">+</i></div>
+				</td>
+				<td>¥{{item.nowPrice*item.num}}</td>
+				<td><button ng-click="remove($index)">删除</button></td>
+			</tr>
+			
+			<tr class="total">
+				<td colspan="6"><em>商品金额<strong>&nbsp;&nbsp;¥&nbsp;&nbsp;{{sum()}}</strong></em></td>
+			</tr>
+		</table>
+		<div class="shopcar-ctrl">
+			<div class="btns">
+				<button>全选</button>
+				<button>批量删除</button>
+			</div>
+			<div class="buy">
+				<em>商品总计<strong>&nbsp;&nbsp;¥&nbsp;&nbsp;{{sum()}}</strong></em>
+				<a href="javascript:void(0)"><button ng-click="to('/order-information')">立即购买</button></a>
+			</div>
+		</div>
+	</div>
+</div>

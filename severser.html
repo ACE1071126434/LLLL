@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/page.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<style type="text/css">
+			.severser {
+				width: 1280px;
+				margin: 20px auto;
+			}
+			
+			.severser .sheep {
+				width: 290px;
+				height: 160px;
+				margin-right: 10px;
+				margin-left: 10px;
+				position: relative;
+				background: rgb(239, 239, 239);
+				vertical-align: middle;
+			}
+			
+			.severser .sheep strong img {
+				position: absolute;
+				/*border: 1px solid black;*/
+				left: 130px;
+				top: 50px;
+			}
+			
+			.severser .sheep strong {
+				background: rgb(239, 239, 239);
+			}
+			
+			.severser .sheep span {
+				display: block;
+				padding: 15px 0 0 20px;
+			}
+			
+			.severser .hot,
+			.hot_p {
+				position: absolute;
+				left: 0;
+				top: 5px;
+				transform: rotate(-45deg);
+			}
+			
+			/*.severser .t_nav {
+				padding-left: 20px;
+			}*/
+			
+			.severser .t_nav div {
+				display: inline-block;
+				width: 290px;
+				height: 160px;
+			}
+			
+			.severser .lemon {
+				font-size: 16px;
+			}
+			
+			.severser .m_nav {
+				width: 360px;
+				border-bottom: 1px solid lightgray;
+				margin-top: 10px;
+				margin-left: 15px;
+			}
+			
+			.severser .m_nav a {
+				display: inline-block;
+				padding-bottom: 10px;
+				color: black;
+				margin-top: 20px;
+				font-size: 16px;
+				color: #666;
+			}
+			
+			.severser .list img {
+				width: 289px;
+				height: 160px;
+			}
+			
+			.severser .list {
+				text-align: center;
+				background: rgb(239, 239, 239);
+			}
+			
+			.severser .list span {
+				display: block;
+			}
+			
+			.severser .score {
+				display: inline-block;
+				background: url(img/评分.png) no-repeat;
+				width: 20px;
+				height: 20px;
+				background-size: cover;
+				margin-right: -90px;
+			}
+			
+			.severser .bad {
+				display: inline-block;
+				background: url(img/评分ping.png) no-repeat;
+				width: 20px;
+				height: 20px;
+				background-size: cover;
+			}
+			
+			.severser .prize {
+				display: inline-block;
+				color: rgb(235, 98, 63);
+				margin-left: -55px;
+			}
+			
+			.severser .tan {
+				display: flex;
+				justify-content: space-around;
+				margin: 5px 0 5px 0;
+			}
+			
+			.severser .b_nav {
+				display: inline-block;
+				margin-top: 20px;
+				margin-right: 20px;
+			}
+			
+			.severser .sousuo {
+				padding: 10px 40px 10px 0;
+				/*border: 1px solid red;*/
+				position: relative;
+			}
+			
+			.severser .sousuo span {
+				display: inline-block;
+				margin-left: 30px;
+				width: 80px;
+				height: 30px;
+				border: 1px solid lightgray;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			.severser .select {
+				text-align: right;
+			}
+			
+			.severser .prize em:nth-child(1) {
+				position: absolute;
+				top: 5px;
+			}
+			.severser .prize em:nth-child(2) {
+				position: absolute;
+				top: 14px;
+			}
+			.swiper-button-prev {
+				width: 60px;
+				height: 60px;
+				background: url(img/jiantou.png) no-repeat;
+				background-size: 60px 60px;
+			}
+			.swiper-button-next {
+				width: 60px;
+				height: 60px;
+				background: url(img/jiantou.png) no-repeat;
+				background-size: 60px 60px;
+				transform: rotateZ(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="img/lunbo.png" /></div>
+					<div class="swiper-slide"><img src="img/lunbo.png" /></div>
+					<div class="swiper-slide"><img src="img/lunbo.png" /></div>
+				</div>
+				<!-- 如果需要分页器 -->
+				<div class="swiper-pagination"></div>
+				<!-- 如果需要导航按钮 -->
+				<div class="swiper-button-prev left"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+
+			<!--中间内容-->
+			<div class="severser">
+				<div class="t_nav">
+
+					<div class="sheep">
+						<em><img src="img/多边形哈哈.png"/></em>
+						<em class="hot">热卖</em>
+						<span>内蒙古草原</span>
+						<span>蒸羊羊精肉</span>
+						<strong><img src="img/70q58PICXw2_1024.png"/></strong>
+					</div>
+					<!--2-->
+					<div class="sheep">
+						<em><img src="img/多边形拷贝.png"/></em>
+						<em class="hot_p">精品</em>
+						<span>新西兰柠檬</span>
+						<span class="lemon">柠香清新</span>
+						<strong><img src="img/图层zi.png"/></strong>
+					</div>
+					<!--3-->
+					<div class="sheep">
+						<em><img src="img/多边形哈哈.png"/></em>
+						<em class="hot">热卖</em>
+						<span>内蒙古草原</span>
+						<span>蒸羊羊精肉</span>
+						<strong><img src="img/70q58PICXw2_1024.png"/></strong>
+					</div>
+					<!--4-->
+					<div class="sheep">
+						<em><img src="img/多边形拷贝.png"/></em>
+						<em class="hot_p">精品</em>
+						<span>新西兰柠檬</span>
+						<span class="lemon">柠香清新</span>
+						<strong><img src="img/图层zi.png"/></strong>
+					</div>
+
+				</div>
+
+				<div class="m_nav">
+					<a href="">分类 : </a>
+					<a href="">全部</a>
+					<a href="">餐饮</a>
+					<a href="">酒店</a>
+					<a href="">休闲</a>
+					<a href="">电影</a>
+					<a href="">汽车装饰</a>
+					<a href="">家政服务</a>
+
+				</div>
+
+				<!--筛选-->
+
+				<div class="select">
+					<div class="sousuo">
+
+						<span>销量</span>
+						<span class="prize">价格
+						<em><img src="img/多边形one.png"/></em>
+						<em><img src="img/多边形two.png"/></em>
+					</span>
+						<span>评分最高</span>
+
+					</div>
+				</div>
+
+				<!--xiabu-->
+
+				<div class="b_nav" style="margin-left:20px;">
+
+					<div class="list">
+						<img src="img/图层是滴是滴.png" alt="" />
+						<span><h3>阳澄湖大闸蟹</h3></span>
+
+						<div class="tan">
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="bad"></em>
+							<em class="prize">¥62/人</em>
+						</div>
+						<span>浙江省台州市温岭市人民西路2号</span>
+					</div>
+
+				</div>
+				<!--2-->
+				<div class="b_nav">
+
+					<div class="list">
+						<img src="img/图层是滴是滴.png" alt="" />
+						<span><h3>阳澄湖大闸蟹</h3></span>
+
+						<div class="tan">
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="bad"></em>
+							<em class="prize">¥62/人</em>
+						</div>
+						<span>浙江省台州市温岭市人民西路2号</span>
+					</div>
+
+				</div>
+				<!--3-->
+				<div class="b_nav">
+
+					<div class="list">
+						<img src="img/图层是滴是滴.png" alt="" />
+						<span><h3>阳澄湖大闸蟹</h3></span>
+
+						<div class="tan">
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="bad"></em>
+							<em class="prize">¥62/人</em>
+						</div>
+						<span>浙江省台州市温岭市人民西路2号</span>
+					</div>
+
+				</div>
+				<!--4-->
+				<div class="b_nav">
+
+					<div class="list">
+						<img src="img/图层是滴是滴.png" alt="" />
+						<span><h3>阳澄湖大闸蟹</h3></span>
+
+						<div class="tan">
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="score"></em>
+							<em class="bad"></em>
+							<em class="prize">¥62/人</em>
+						</div>
+						<span>浙江省台州市温岭市人民西路2号</span>
+					</div>
+
+				</div>
+
+				<!--分页器-->
+				<div style="text-align: center;margin:40px auto;">
+					<div id="pager" class="pager clearfix"></div>
+				</div>
+				<div id="wraper" class="pagerHtmlWrap"></div>
+				<div style="text-align: center;">
+					<!--<div id="pager2" class="pager clearfix"></div>-->
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/jquery.z-pager.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container', {
+			direction: 'horizontal',
+			loop: true,
+			// 如果需要分页器
+			pagination: '.swiper-pagination',
+			autoplay: 1000,
+
+			// 如果需要前进后退按钮
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+		})
+	</script>
+	<script type="text/javascript">
+		$("#pager").zPager({
+			totalData: 60
+		});
+		$("#pager2").zPager({
+			url: 'pageData.json',
+			htmlBox: $('#wraper'),
+			btnShow: false
+		});
+	</script>
+
+</html>

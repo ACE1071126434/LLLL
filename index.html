@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="appCtrl">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>礼拜五</title>
+		<!--样式重置文件-->
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<!--公共样式文件-->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<!--页面布局样式-->
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<!--网站小图标ico-->
+		<link rel="shortcut icon" type="text/css" href="img/favicon.ico" />
+		<!--引入jQuery库-->
+		<script src="js/jquery.min.js"></script>
+		<!--引入Angular框架-->
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--引入Angular路由-->
+		<script src="js/angular-route.js" type="text/javascript" charset="utf-8"></script>
+		<!--引入公共页交互-->
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<!--引入页面具体交互功能-->
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--引入导航栏部分-->
+		<nav class="head-nav-wrap" ng-include="'head.html'"></nav>
+		<!--中间内容部分-->
+		<ng-view></ng-view>
+		<!--引入页面底部部分-->
+		<footer class="foot-wrap" ng-include="'footer.html'"></footer>
+	</body>
+
+</html>

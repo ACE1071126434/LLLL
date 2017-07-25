@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的积分</title>
+		<style>
+			.my-integral {
+				width: 1080px;
+				height: 610px;
+			}
+			
+			.my-integral h2 {
+				height: 64px;
+				color: #535353;
+				font-size: 18px;
+				line-height: 64px;
+				padding-left: 24px;
+				border-bottom: 1px solid #D5D5D5;
+			}
+			
+			.my-integral p {
+				margin-left: 24px;
+				margin-top: 23px;
+				font-size: 16px;
+			}
+			
+			.my-integral p span:nth-child(2) {
+				color: #EA6E06;
+			}
+			
+			.my-integral table {
+				width: 1045px;
+				margin: 0 auto;
+				margin-top: 10px;
+				border: 1px solid #D5D5D5;
+			}
+			
+			.my-integral table tr {
+				height: 52px;
+				color: #6E706E;
+				font-size: 14px;
+				line-height: 52px;
+				border: 1px solid #D5D5D5;
+			}
+			
+			.my-integral table tr th {
+				width: 348px;
+				text-align: center;
+			}
+			
+			.my-integral table tr td {
+				text-align: center;
+				width: 348px;
+			}
+			
+			.my-integral table tr:nth-child(1) {
+				background: #EFEFEF;
+			}
+			
+			.my-integral table tr:nth-child(n+1):hover {
+				background: #F3FFEE;
+			}
+			
+			.my-integral table tr:nth-child(1):hover {
+				background: #EFEFEF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-count')">我的账户</li>
+					<li ng-click="to('/my-order')">我的订单</li>
+					<li ng-click="to('/my-integral')" class="center-active">我的积分</li>
+					<li ng-click="to('/integral-order')">积分订单</li>
+					<li ng-click="to('/my-wallet')">我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/user-information')">个人资料</li>
+					<li ng-click="to('/address-manger')">地址管理</li>
+					<li ng-click="to('/my-fav')">我的收藏</li>
+					<li ng-click="to('/recent')">最近浏览</li>
+					<li ng-click="to('/psd-edit')">修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-msg')">我的消息</li>
+					<li ng-click="to('/feedback')">意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<div class="my-integral">
+					<h2>我的积分</h2>
+					<p>
+						<span>当前积分：</span><span>11分</span>
+					</p>
+					<table>
+						<tr>
+							<th>积分日期</th>
+							<th>变动</th>
+							<th>来源</th>
+						</tr>
+						<tr>
+							<td>2017-07-14 14:33:03</td>
+							<td>+ 10</td>
+							<td>下单所得</td>
+						</tr>
+						<tr>
+							<td>2017-07-14 14:33:03</td>
+							<td>+ 10</td>
+							<td>下单所得</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	//个人中心切换类名
+	$(".center-left li").on("click", function() {
+		$(".center-left li").removeClass("center-active");
+		$(this).addClass("center-active");
+	});
+	</script>
+
+</html>

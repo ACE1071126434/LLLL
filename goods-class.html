@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商品分类</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style type="text/css">
+			.goods-class-wrap {
+				width: 1280px;
+				margin: 20px auto;
+			}
+			
+			.goods-class-nav {
+				height: 54px;
+				font-size: 16px;
+				color: #666;
+				line-height: 54px;
+				background: #f4f4f4;
+			}
+			
+			.goods-class-nav i {
+				margin-left: 20px;
+			}
+			
+			.goods-class-nav span {
+				margin-left: 10px;
+				margin-right: 10px;
+				cursor: pointer;
+			}
+			.class-check {
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			.class-check li {
+				padding-top: 16px;
+				padding-bottom: 16px;
+				font-size: 16px;
+				color: #666;
+				border-bottom: 1px solid #e7e7e7;
+			}
+			.class-check li strong {
+				margin-right: 10px;
+			}
+			.class-check li span {
+				margin-left: 10px;
+				margin-right: 10px;
+				padding: 5px 10px;
+			}
+			.class-check li span:hover {
+				background: #3D8E43;
+				color: white;
+				cursor: pointer;
+			}
+			.class-check .check-active {
+				background: #3D8E43;
+				color: white;
+			}
+			.filter {
+				overflow: hidden;
+				font-size: 16px;
+				color: #666;
+			}
+			.filter>i {
+				float: left;
+				line-height: 30px;
+			}
+			.filter>span {
+				float: right;
+				line-height: 30px;
+			}
+			.filter>i a {
+				margin-left: 20px;
+				padding: 5px 15px;
+				border: 1px solid #E7E7E7;
+			}
+			.filter>i .top-active {
+				border: 1px solid #3D8E43;
+				color: #3D8E43;
+			}
+			.filter>i a:hover {
+				border: 1px solid #3D8E43;
+				color: #3D8E43;
+				cursor: pointer;
+			}
+			.filter>span a {
+				padding: 5px 15px;
+				margin-left: 20px;
+				background: #DEDEDE;
+			}
+			.filter>span .filter-active {
+				background: #3D8E43;
+				color: white;
+			}
+			.filter>span a:hover {
+				background: #3D8E43;
+				color: white;
+				cursor: pointer;
+			}
+			.goods-cont {
+				overflow: hidden;
+				margin-top: 20px;
+			}
+			.goods-cont li {
+				float: left;
+				margin: 20px 0 20px 20px;
+				width: 303px;
+				height: 535px;
+				border: 1px solid #e4e4e4;
+			}
+			.goods-cont li:hover {
+				border: 1px solid #3D8E43;
+			}
+			.goods-cont li img {
+				width: 303px;
+				height: 403px;
+				vertical-align: top;
+			}
+			.goods-cont li:nth-child(4n+1) {
+				margin-left: 0;
+			}
+			.goods-cont li div {
+				width: 263px;
+				padding: 10px 20px;
+				overflow: hidden;
+			}
+			.goods-cont li div h4 {
+				font-size: 18px;
+				line-height: 36px;
+			}
+			.goods-cont li div h5 {
+				font-size: 14px;
+				color: #666666;
+				line-height: 28px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.goods-cont li div strong {
+				font-size: 24px;
+				font-weight: bolder;
+				color: #FF575C;
+				line-height: 44px;
+			}
+			.goods-cont li div span {
+				font-size: 20px;
+				color: #666;
+				margin-left: 10px;
+				text-decoration: line-through;
+				line-height: 44px;
+			}
+			.goods-cont li div em {
+				float: right;
+				width: 32px;
+				height: 30px;
+				background: url(img/shopcar-empty.png) no-repeat;
+				background-size: 100% 100%;
+				cursor: pointer;
+			}
+			.page-wrap {
+				text-align: center;
+				margin-top: 40px;
+				font-size: 20px;
+				color: #666;
+				height: 35px;
+				line-height: 35px;
+			}
+			.page-wrap em {
+				padding: 0 20px;
+				font-size: 30px;
+				line-height: 35px;
+				color: white;
+				vertical-align: bottom;
+				background: #3D8E43;
+				cursor: pointer;
+			}
+			.page-wrap strong {
+				padding: 10px 20px;
+				line-height: 35px;
+				margin-right: 20px;
+			}
+			.page-wrap strong:hover {
+				background: #3D8E43;
+				color: white;
+				cursor: pointer;
+			}
+			.page-wrap .page-active {
+				background: #3D8E43;
+				color: white;
+			}
+			.page-wrap div {
+				display: inline-block;
+				width: 400px;
+				overflow: hidden;
+				line-height: 35px;
+				vertical-align: bottom;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.page-wrap input {
+				border: 1px solid #d2d2d2;
+				padding: 0 10px;
+				font-size: 16px;
+				width: 50px;
+				text-align: center;
+				margin-right: 10px;
+				margin-left: 10px;
+				line-height: 33px;
+			}
+			.page-wrap button {
+				border: none;
+				font-size: 16px;
+				line-height: 35px;
+				padding-left: 10px;
+				padding-right: 10px;
+				margin-left: 10px;
+				color: white;
+				background: #F78327;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="goods-class-wrap">
+			<div class="goods-class-nav">
+				<i>您当前的位置&nbsp;&nbsp;:</i>
+				<span>首页</span>&gt;
+				<span>全部商品</span>&gt;
+				<span>苹果</span>&gt;
+				<span>阿克苏</span>&gt;
+				<span>大苹果</span>
+			</div>
+			<ul class="class-check">
+				<li class="class-one">
+					<strong>一级分类&nbsp;&nbsp;:</strong>
+					<span class="check-active">全部</span>
+					<span ng-repeat="item in movieClassArr track by $index" ng-click="movieFilter($index)">{{item}}</span>
+					<!--<span>田园蔬菜</span>
+					<span>海鲜水产</span>
+					<span>优选食材</span>
+					<span>零食酒水</span>
+					<span>蛋奶速食</span>
+					<span>全球代购</span>-->
+				</li>
+				<li class="class-two">
+					<strong>二级分类&nbsp;&nbsp;:</strong>
+					<span class="check-active">全部</span>
+					<span>水果礼盒</span>
+					<span>进口水果</span>
+					<span>有机水果</span>
+					<span>国产水果</span>
+				</li>
+			</ul>
+			<div class="filter">
+				<i>
+					<b>排序&nbsp;:</b>
+					<a href="javascript:void(0)" ng-click="movieTop('box')" class="top-active">销量</a>
+					<a href="javascript:void(0)" >价格从低到高</a>
+					<a href="javascript:void(0)" ng-click="movieTop('top')">价格从高到低</a>
+					<a href="javascript:void(0)" ng-click="movieTop('box')" >评价最高</a>
+				</i>
+				<span>
+					<b>筛选&nbsp;:</b>
+					<a href="javascript:void(0)" class="filter-active">全部</a>
+					<a href="javascript:void(0)" >全国</a>
+					<a href="javascript:void(0)" >同城</a>
+					<a href="javascript:void(0)" >次日达</a>
+				</span>
+			</div>
+			<ul class="goods-cont">
+				<li ng-repeat="item in movieArr track by $index">
+					<a href="javascript:void(0)">
+						<img ng-src="{{item.images.large}}" alt="" />
+					</a>
+					<div>
+						<h4>{{item.title}}</h4>
+						<h5>{{item.original_title}}</h5>
+						<strong>★&nbsp;{{item.rating.average}}</strong>
+						<span>★&nbsp;{{item.rating.max}}</span>
+						<em ng-click="toShopCar($index)"></em>
+					</div>
+				</li>
+			</ul>
+			<div class="page-wrap">
+				<em>&lt;</em>
+				<div>
+					<strong class="page-active">1</strong>
+					<strong>2</strong>
+					<strong>3</strong>
+				</div>
+				<em>&gt;</em>
+				<input type="number" />
+				<span>/10</span>
+				<button>跳转</button>
+			</div>
+		</div>
+	</body>
+
+</html>

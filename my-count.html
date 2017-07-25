@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-count')" class="center-active">我的账户</li>
+					<li ng-click="to('/my-order')">我的订单</li>
+					<li ng-click="to('/my-integral')">我的积分</li>
+					<li ng-click="to('/integral-order')">积分订单</li>
+					<li ng-click="to('/my-wallet')">我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/user-information')">个人资料</li>
+					<li ng-click="to('/address-manger')">地址管理</li>
+					<li ng-click="to('/my-fav')">我的收藏</li>
+					<li ng-click="to('/recent')">最近浏览</li>
+					<li ng-click="to('/psd-edit')">修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-msg')">我的消息</li>
+					<li ng-click="to('/feedback')">意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<div id="box">
+					<div class="my-count-cont">
+						<div class="left">
+							<img src="img/橙子.png" alt="" />
+							<span>您好,<strong></strong></span>
+						</div>
+						<div class="right">
+							<table border="0">
+								<tr>
+									<th>当前积分</th>
+									<th>我的钱包</th>
+									<th>充值有礼&gt;&gt;</th>
+								</tr>
+								<tr>
+									<td ng-click="to('/my-integral')">124</td>
+									<td ng-click="to('/my-wallet')">¥1220</td>
+									<td ng-click="to('/exchange')">充值卡兑换&gt;&gt;</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<img src="http://qiniu.libaiwu.com.cn/goodsimg/1478077086275.jpg" alt="" />
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			$(".my-count-cont strong").text($(".nav-top>strong>span").eq(0).text());
+		});
+	</script>
+
+</html>

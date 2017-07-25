@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a {
+				text-decoration: none;
+				color: rgb(61, 132, 47);
+			}
+			
+			.user-information {
+				width: 1280px;
+			}
+			
+			.user-information .msg {
+				border-bottom: 1px solid lightgray;
+			}
+			
+			.user-information .msg h3 {
+				font-size: 18px;
+				line-height: 60px;
+				margin-left: 20px;
+			}
+			
+			.base {
+				font-size: 16px;
+			}
+			
+			.user-information .img {
+				display: inline-block;
+				vertical-align: middle;
+				width: 73px;
+				height: 73px;
+				border-radius: 50%;
+				border: 2px solid rgb(252, 224, 18);
+			}
+			
+			.user-information .ziliao {
+				width: 600px;
+				margin-left: 30px;
+				font-size: 20px;
+			}
+			
+			.user-information .ziliao li {
+				width: 600px;
+				margin-top: 20px;
+				height: 35px;
+			}
+			
+			.user-information .name {
+				width: 250px;
+				height: 30px;
+				background: rgb(241, 241, 241);
+				border: 1px solid lightgray;
+				outline: none;
+			}
+			
+			.user-information .birth {
+				width: 250px;
+				height: 30px;
+				font-size: 20px;
+			}
+			
+			.user-information .phone {
+				width: 200px;
+				height: 30px;
+				margin-left: 0;
+				background: rgb(241, 241, 241);
+				border: 1px solid lightgray;
+				outline: none;
+			}
+			
+			.user-information .gender input {
+				margin-right: 5px;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				border: 1px solid #d3d3d3;
+			}
+			
+			.user-information .gender input:checked:before {
+				content: "";
+				float: left;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: #3d8e43;
+				transform: translate(1px, 1px);
+			}
+			
+			.user-information .btn {
+				width: 120px;
+				height: 40px;
+				border-radius: 5px;
+				text-align: center;
+				background: rgb(234, 110, 6);
+				color: white;
+				outline: none;
+				border: none;
+				font-size: 18px;
+				margin: 30px 0 15px 58px;
+			}
+			
+			.user-information .cphone {
+				display: inline-block;
+				margin-left: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-count')">我的账户</li>
+					<li ng-click="to('/my-order')">我的订单</li>
+					<li ng-click="to('/my-integral')">我的积分</li>
+					<li ng-click="to('/integral-order')">积分订单</li>
+					<li ng-click="to('/my-wallet')">我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/user-information')" class="center-active">个人资料</li>
+					<li ng-click="to('/address-manger')">地址管理</li>
+					<li ng-click="to('/my-fav')">我的收藏</li>
+					<li ng-click="to('/recent')">最近浏览</li>
+					<li ng-click="to('/psd-edit')">修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-msg')">我的消息</li>
+					<li ng-click="to('/feedback')">意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<div class="user-information">
+					<!--个人资料-->
+					<div class="msg">
+						<h3>个人资料</h3>
+					</div>
+					<!--个人基本信息-->
+					<div class="base">
+						<span>当前头像 : </span>
+						<span class="img"><img src="img/head.png"/></span>
+						<a href="">修改</a>
+					</div>
+					<ul class="ziliao">
+						<li>
+							<span>昵称 : <input type="text"  class="name"/></span>
+						</li>
+						<li>
+							<span class="gender">性别 :
+						<label><input type="radio" name="sex" value="男"/>男</label>
+						<label><input type="radio"name="sex" value="女"/>女</label>
+					</span>
+						</li>
+						<li>
+							<span>生日 : <input type="date" class="birth"/></span>
+						</li>
+						<li>
+							<span>手机 : <input type="text" class="phone"/></span>
+							<a href="javascript:void(0)" class="cphone">更换手机</a>
+						</li>
+						<button class="btn">确认提交</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		//个人中心切换类名
+		$(".center-left li").on("click", function() {
+			$(".center-left li").removeClass("center-active");
+			$(this).addClass("center-active");
+		});
+
+		//修改个人资料
+		$(".btn").on("click", function() {
+			if($(".nav-top>strong>span:eq(0)").text() == "") {
+				window.location.replace("#/logoIn");
+				return;
+			} else {
+				$.ajax({
+					type: "get",
+					url: "php/userEdit.php",
+					data: {
+						phoneNum: $(".nav-top>strong>span:eq(0)").text(),
+						userName: $(".ziliao .name").val(),
+						gender: $(".ziliao li:eq(1) input:checked").val(),
+						birthday: $(".ziliao .birth").val(),
+						newPhone: $(".ziliao .phone").val()
+					},
+					success: function(data) {
+						alert(data);
+					},
+					async: true
+				});
+			}
+
+		});
+	</script>
+
+</html>

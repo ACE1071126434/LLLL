@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/reset.css" />
+		<title>账单</title>
+		<style>
+		.order{
+			width: 1080px;
+		}
+		.order h2{
+		height: 64px;
+		color: #535353;
+		font-size: 18px;
+		line-height: 64px;
+		padding-left: 24px;
+		border-bottom: 1px solid #D5D5D5;
+		}
+		.order table{
+		width: 1045px;
+		margin: 0 auto;
+		margin-top: 20px;
+		border: 1px solid #D5D5D5;
+		}
+		.order table th {
+			text-align: center;
+		}
+		.order  table tr{
+		height: 52px;
+		color: #6E706E;
+		font-size: 14px;
+		line-height: 52px;
+		border: 1px solid #D5D5D5;
+		}
+		.order table tr td{
+		width: 261px;
+		text-align: center;
+		}
+		.order table tr:nth-child(1){
+		background: #EFEFEF;
+		color: #000000;
+		}
+		.order table tr:nth-child(n+1):hover{
+		background: #F3FFEE;
+		}
+		.order table tr:nth-child(1):hover{
+		background: #EFEFEF;
+		}
+		.order .order-none{
+		display: none;
+		}
+		.order table tr td:nth-child(3){
+		color: #EA6E06;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="order">
+			<h2>我的账单</h2>
+			<table>
+				<tr>
+					<th>操作</th>
+					<th>充值金额</th>
+					<th>账户余额</th>
+					<th>时间</th>
+				</tr>
+				<tr class="order-none">
+					<td colspan="4">暂无消息</td>
+				</tr>
+				<tr>
+					<td>充值</td>
+					<td>+¥1000.0元</td>
+					<td>¥3400.0元</td>
+					<td>2017-07-14 14:33:03</td>
+				</tr>
+				<tr>
+					<td>消费</td>
+					<td>-¥1000.0元</td>
+					<td>¥2400.0元</td>
+					<td>2017-07-14 14:33:03</td>
+				</tr>
+				<tr>
+					<td>退款</td>
+					<td>+¥1000.0元</td>
+					<td>¥3400.0元</td>
+					<td>2017-07-14 14:33:03</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

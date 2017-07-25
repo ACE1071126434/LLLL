@@ -1,0 +1,243 @@
+/*切换城市弹框*/
+
+.alert-city {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 20000;
+	background: rgba(126, 126, 126, 0.5);
+	display: none;
+}
+
+.alert-city-img {
+	position: absolute;
+	background: url(../img/1.png) no-repeat;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 700px;
+	height: 400px;
+}
+
+.alert-city .site {
+	position: absolute;
+	margin-left: 60px;
+	margin-top: 60px;
+	font-size: 18px;
+	color: #5C5C5C;
+}
+
+.alert-city .info {
+	position: absolute;
+	width: 400px;
+	height: 40px;
+	top: -100px;
+	text-align: center;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+
+.alert-city .info select {
+	width: 100px;
+	height: 30px;
+	padding: 0 10px;
+	margin-right: 20px;
+}
+
+.alert-city button {
+	margin-left: 270px;
+	margin-top: 250px;
+	color: white;
+	width: 160px;
+	height: 40px;
+	text-align: center;
+	font-size: 18px;
+	background-color: #D7811E;
+	border: 1px solid #D7811E;
+	border-radius: 3px;
+	border: none;
+}
+
+
+/*切换城市弹框结束*/
+
+
+/*我的账户信息部分*/
+
+#box {
+	width: 1080px;
+	min-height: 624px;
+}
+
+.my-count-cont {
+	width: calc(100% - 2px - 80px);
+	height: 140px;
+	padding: 40px;
+	border: 1px solid #e7e7e7;
+	background: #F3FFF3;
+	font-size: 20px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.my-count-cont .left {
+	float: left;
+	width: 50%;
+	color: #666666;
+}
+
+.my-count-cont .left img {
+	border: 5px solid #ffe440;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 20px;
+}
+
+.my-count-cont .left strong {
+	color: #f05f3e;
+}
+
+.my-count-cont .right {
+	float: right;
+	width: 50%;
+}
+
+.my-count-cont .right table {
+	height: 140px;
+}
+
+.my-count-cont .right td,
+.my-count-cont .right th {
+	width: 166px;
+	text-align: center;
+}
+
+.my-count-cont .right td {
+	color: #F78327;
+	cursor: pointer;
+}
+
+.my-count-cont+img {
+	width: 1078px;
+	border: 1px solid #D3D3D3;
+}
+
+
+/*我的账户信息结束*/
+
+
+/*修改手机号码第一步*/
+
+.change-step1 {
+	width: 1280px;
+}
+
+.change-step1 input {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.change-step1 .change {
+	border-bottom: 1px solid lightgray;
+}
+
+.change-step1 .change h4 {
+	font-size: 18px;
+	line-height: 50px;
+	margin-left: 20px;
+}
+
+.change-step1 .yz {
+	margin: 20px 0 0 20px;
+}
+
+.change-step1 .yz span {
+	display: inline-block;
+	width: 236px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+
+.change-step1 .yz span:nth-child(1) {
+	background: url(../img/矩形one.png) no-repeat;
+}
+
+.change-step1 .yz span:nth-child(2) {
+	width: 250px;
+	background: url(../img/矩形two.png) no-repeat;
+}
+
+.change-step1 .yz span:nth-child(3) {
+	background: url(../img/矩形three.png) no-repeat;
+}
+
+.phone,
+.ma,
+.suiji,
+.password {
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.change-step1 .phone input {
+	width: 300px;
+	outline: none;
+	border: 1px solid lightgray;
+	height: 40px;
+}
+
+.change-step1 .password input {
+	width: 300px;
+	outline: none;
+	border: 1px solid lightgray;
+	height: 40px;
+}
+
+.change-step1 .ma input:nth-child(1) {
+	width: 300px;
+	outline: none;
+	border: 1px solid lightgray;
+	height: 40px;
+}
+
+.change-step1 .code {
+	width: 100px;
+	height: 35px;
+	margin-left: 30px;
+	outline: none;
+	border: 1px solid lightgrey;
+	text-align: center;
+}
+
+.change-step1 .ma {
+	display: inline-block;
+}
+
+.change-step1 .btn {
+	margin: 20px 0 0 20px;
+	width: 150px;
+	height: 50px;
+	background: rgb(234, 110, 6);
+	border-radius: 10px;
+	outline: none;
+	color: white;
+	border: none;
+}
+
+.change-step1 .click a {
+	color: black;
+}
+
+.change-step1 #codes {
+	background: lightcyan;
+}
+
+
+/*第一步结束*/

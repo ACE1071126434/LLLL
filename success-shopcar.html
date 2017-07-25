@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<title>订单支付</title>
+		<style>
+		.success-order{
+		width: 100%;
+		height: 100%;
+		}
+		.success-order-box{
+		width: 1280px;
+		margin: 20px auto;
+		}
+		.success-order-succeed{
+		margin: 0 auto;
+		text-align: center;
+		}
+		.success-order-succeed>img{
+		margin-top: 80px;
+		}
+		.success-order-succeed p{
+		margin-top: 50px;
+		font-size: 24px;
+		}
+		.success-order-succeed p span:nth-child(1){
+		color: #535353;
+		}
+		.success-order-succeed p span:nth-child(2){
+		color: #EB6F09;
+		}
+		.success-order-zuobb{
+		width: 1280px;
+		height: 40px;
+		margin-top: 85px;
+		line-height: 40px;
+		background:#F3FFEE;
+		border: 1px solid #D5D5D5;
+		}
+		.success-order-zuobb img{
+		width: 12px;
+		margin-left: 15px;
+		}
+		.success-order-zuobb span{
+		color: #6E706E;
+		font-size: 15px;
+		margin-left: 10px;
+		}
+		.success-order-sum{
+		width: 1280px;
+		margin-top: 40px;
+		margin-bottom: 40px;
+		}
+		.success-order-sum span:nth-child(1){
+		font-size: 18px;
+		color: #535353;
+		}
+		.success-order-sum span:nth-child(2){
+		font-size: 18px;
+		color: #BB0000;
+		margin-left: 28px;
+		}
+		.success-order-sum span:nth-child(3){
+		font-size: 18px;
+		color: #535353;
+		margin-left: 5px;
+		}
+		.success-order-sum span:nth-child(4){
+		text-align: right;
+		font-size: 14px;
+		color: #535353;
+		margin-left:790px;
+		}
+		.success-order-box h2{
+		font-size: 18px;
+		color: #535353;
+		height: 40px;
+		border-bottom: 1px solid #D5D5D5;
+		}
+		.success-order-payment{
+		margin-top: 40px;
+		overflow: hidden;
+		}
+		.success-order-payment input{
+		float: left;
+		margin-left: 30px;
+		margin-top: 14px;
+		}
+		.success-order-payment input:nth-child(1){
+		float: left;
+		margin-left: 0px;
+		margin-top: 14px;
+		}
+		.success-order-payment span{
+		float: left;
+		height: 40px;
+		margin-left: 10px;
+		line-height: 40px;
+		border: 1px solid #D5D5D5;
+		}
+		.success-order-payment span img{
+		margin-top: 3px;
+		margin-left: 10px;
+		margin-right: 5px;
+		}
+		.success-order-payment span .pic{
+		margin-top: 10px;
+		margin-right: 10px;
+		}
+		.success-order-payment span .pic1{
+		float: left;
+		margin-top: 6px;
+		}
+		.success-order-payment span em{
+		float: left;
+		display: inline-block;
+		padding-top: -10px;
+		}
+		.success-order-way{
+		width: 1280px;
+		height: 405px;
+		border: 1px solid #D5D5D5;
+		margin-top: 55px;
+		margin-bottom: 30px;
+		}
+		.order-way-brain{
+		width: 200px;
+		height: 290px;
+		/*display: none;*/
+		margin-left: 350px;
+		margin-top: 75px;
+		text-align: center;
+		}
+		.order-way-brain p{
+		color: #535353;
+		font-size: 18px;
+		}
+		.order-way-brain img{
+		margin-top: 40px;
+		}
+		.order-way-brain button{
+		width: 150px;
+		height: 42px;
+		outline: none;
+		cursor: pointer;
+		font-size: 20px;
+		color: white;
+		background: #E26D00;
+		border-radius: 5%;
+		border: 1px solid #E26D00;
+		}
+		.order-way-weixin{
+		display: none;
+		}
+		.order-way-weixin img:nth-child(1){
+		float: left;
+		margin-top: 40px;
+		margin-left: 305px;
+		border-right: 1px solid #D5D5D5;
+		}
+		.order-way-weixin p{
+		float: right;
+		margin-top: 70px;
+		margin-right: 370px;
+		color: #6E706E;
+		font-size: 18px;
+		}
+		.order-way-weixin .img1{
+		margin-top: 60px;
+		margin-left: 120px;
+		}
+		.order-way-balance{
+		width: 200px;
+		height: 290px;
+		display: none;
+		margin-left: 350px;
+		margin-top: 75px;
+		text-align: center;
+		}
+		.order-way-balance p{
+		color: #535353;
+		font-size: 18px;
+		}
+		.order-way-balance img{
+		margin-top: 40px;
+		}
+		.order-way-balance button{
+		width: 150px;
+		height: 42px;
+		outline: none;
+		cursor: pointer;
+		font-size: 20px;
+		color: white;
+		background: #E26D00;
+		border-radius: 5%;
+		border: 1px solid #E26D00;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="success-order">
+			<div class="success-order-box">
+				<div class="success-order-succeed">
+					<img src="img/形状 1.png"/>
+					<p>
+						<span>订单已提交，请于24小时内完成支付</span>
+						<span> （逾期订单将被取消）</span>
+					</p>
+				</div>
+				<div class="success-order-zuobb">
+					<img src="img/location.png"/>
+					<span>送货至：某某某 某某地址 联系电话157*****254
+					</span>
+				</div>
+				<div class="success-order-sum">
+					<span>应付金额:</span><span>{{sum()}}</span>
+					<span> (在线支付)</span>
+					<span>订单编号：20170713210828ah0558</span>
+				</div>
+				<h2>支付平台</h2>
+				<div class="success-order-payment">
+					<input checked="checked" name="Fruit" type="radio" class="order-payment-Fruit1" />
+					<span><img src="img/图层 57.png"/></span>
+					<input name="Fruit" type="radio" class="order-payment-Fruit2" />
+					<span><img src="img/图层 58.png" class="pic"/></span>
+					<input name="Fruit" type="radio" class="order-payment-Fruit3" />
+					<span><img src="img/图层 60.png" class="pic1"/>
+						<em>余额支付（¥0）</em>
+					</span>
+				</div>
+				<div class="success-order-way">
+					<div class="order-way-brain">
+						<p>使用电脑支付</p>
+						<img src="img/屏幕快照 2017-07-14 10.15.33.png"/>
+						<button>立即支付</button>
+					</div>
+					
+					
+					<div class="order-way-weixin">
+						<img src="img/图层 86.png" alt="" />
+						<p>使用微信扫一扫付款</p>
+						<img src="img/屏幕快照 2017-07-14 10.28.59.png" alt="" class="img1" />
+					</div>
+					
+					<div class="order-way-balance">
+						<p>余额支付</p>
+						<img src="img/屏幕快照 2017-07-14 10.15.33.png"/>
+						<button>立即支付</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(".order-payment-Fruit1").click(function(){
+			$(".order-way-brain").show();
+			$(".order-way-weixin").hide();
+			$(".order-way-balance").hide();
+		})
+		$(".order-payment-Fruit2").click(function(){
+			$(".order-way-brain").hide();
+			$(".order-way-weixin").show();
+			$(".order-way-balance").hide();
+		})
+		$(".order-payment-Fruit3").click(function(){
+			$(".order-way-balance").show();
+			$(".order-way-brain").hide();
+			$(".order-way-weixin").hide();
+			
+		})
+	</script>
+</html>

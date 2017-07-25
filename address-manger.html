@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人中心-地址管理</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style type="text/css">
+			#box {
+				width: 1080px;
+				min-height: 624px;
+			}
+			
+			.address-manger-wrap {
+				position: relative;
+				height: 100%;
+			}
+			
+			.address-manger-title {
+				height: 55px;
+				border-bottom: 1px solid #e9e9e9;
+				padding-left: 20px;
+				padding-right: 20px;
+				line-height: 55px;
+				overflow: hidden;
+			}
+			
+			.address-manger-title button {
+				float: right;
+				color: white;
+				font-size: 14px;
+				border: none;
+				padding: 0 10px;
+				line-height: 30px;
+				margin-top: 10px;
+				border-radius: 5px;
+				background: #3D8E43;
+			}
+			
+			.address-manger-title span {
+				font-size: 20px;
+				color: #414141;
+			}
+			
+			.address-none-cont {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				width: 360px;
+				height: 50px;
+				overflow: hidden;
+				display: none;
+			}
+			
+			.address-none-cont a {
+				float: left;
+				width: 31px;
+				height: 31px;
+				background: url(img/pencil.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.address-none-cont span {
+				font-size: 16px;
+				color: #999;
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+			
+			.address-none-cont button {
+				color: white;
+				font-size: 14px;
+				border: none;
+				padding: 0 10px;
+				line-height: 30px;
+				border-radius: 5px;
+				background: #3D8E43;
+			}
+			
+			.address-cont table {
+				border: 1px solid #D3D3D3;
+				width: 1040px;
+				font-size: 14px;
+				color: #666;
+				margin: 20px auto 0;
+				text-align: center;
+			}
+			
+			.address-cont table td,
+			.address-cont table th {
+				max-width: 200px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			
+			.address-cont table tr {
+				border-bottom: 1px solid #D3D3D3;
+				height: 54px;
+			}
+			
+			.address-cont table th {
+				text-align: center;
+				color: #333;
+				font-size: 16px;
+			}
+			
+			.address-cont table tr:first-child {
+				height: 45px;
+				background: #f2f2f2;
+			}
+			
+			.address-cont table tr:nth-child(2) button:first-child {
+				display: none;
+			}
+			
+			.address-cont table button {
+				border: none;
+				background: none;
+				color: #3D8E43;
+				padding: 0 5px 0 4px;
+				border-right: 2px solid #999;
+			}
+			
+			.address-cont table button:first-child {
+				color: #F78327;
+			}
+			
+			.address-cont table button:last-child {
+				border: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-count')">我的账户</li>
+					<li ng-click="to('/my-order')">我的订单</li>
+					<li ng-click="to('/my-integral')">我的积分</li>
+					<li ng-click="to('/integral-order')">积分订单</li>
+					<li ng-click="to('/my-wallet')">我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/user-information')">个人资料</li>
+					<li ng-click="to('/address-manger')" class="center-active">地址管理</li>
+					<li ng-click="to('/my-fav')">我的收藏</li>
+					<li ng-click="to('/recent')">最近浏览</li>
+					<li ng-click="to('/psd-edit')">修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-msg')">我的消息</li>
+					<li ng-click="to('/feedback')">意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<div id="box">
+					<div class="address-manger-wrap">
+						<div class="address-manger-title">
+							<span>地址管理</span>
+							<button ng-click="toWhere('/add-address')">添加新地址</button>
+						</div>
+						<div class="address-none-cont">
+							<a href="###"></a>
+							<span>暂无收货地址,请点击</span>
+							<button>添加新地址</button>
+						</div>
+						<div class="address-cont">
+							<table border="0">
+								<tr>
+									<th>收货人</th>
+									<th>所在区域</th>
+									<th>街道地址</th>
+									<th>联系电话</th>
+									<th>备注</th>
+									<th>操作</th>
+								</tr>
+								<tr ng-repeat="item in addressArr track by $index">
+									<td>{{item.userName}}</td>
+									<td>{{item.area}}</td>
+									<td>{{item.street}}</td>
+									<td>{{item.tel}}</td>
+									<td>无</td>
+									<td>
+										<button>设为默认地址</button>
+										<button ng-click="to('/add-address')">修改</button>
+										<button ng-click="removeAddress($index)">删除</button>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	//个人中心切换类名
+	$(".center-left li").on("click", function() {
+		$(".center-left li").removeClass("center-active");
+		$(this).addClass("center-active");
+	});
+	
+//	$.ajax({
+//		type:"get",
+//		url:"php/address.php",
+//		dataType:'json',
+//		data:{
+//			flag:'all'
+//		},
+//		success:function(data) {
+//			
+//		},
+//		async:true
+//	});
+	
+	</script>
+
+</html>

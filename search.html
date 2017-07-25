@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.search{
+				width: 1280px;
+				margin: 20px auto;
+			}
+			.search .top{
+				display: flex;
+				justify-content: space-between;
+				/*border: 1px solid red;*/
+			}
+			.search .sousuo{
+				padding: 10px 0 10px 0;
+				
+			}
+			.search .sousuo span{
+				display: inline-block;
+				margin-left: 40px;
+				width: 80px;
+				height: 30px;
+				border: 1px solid lightgray;
+				text-align: center;
+				line-height: 30px;
+			}
+			.search .prize{
+				position: relative;
+				color: green;
+			}
+			.search .prize em:nth-child(1){
+				position: absolute;
+				left: 55px;
+				top: -8px;
+			}
+			.search .times{
+				padding: 10px 0 10px 0;
+			}
+			.search .times span:nth-child(2){
+				background: rgb(59,126,46);
+				color: white;
+			}
+			.search .shows{
+				display: inline-block;
+				border: 1px solid lightgrey;
+				width: 285px;
+				padding-left: 20px;
+				margin-left: 5px;
+				margin-top: 10px;
+			}
+			.search .times span{
+				display: inline-block;
+				width: 80px;
+				height: 30px;
+				border: 1px solid lightgray;
+				text-align: center;
+				line-height: 30px;
+				margin-right: 20px;
+			}
+			.search .shows h4{
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+			.search .shows p{
+				font-size: 14px;
+				margin-bottom: 10px;
+				
+			}
+			.search .shows>span>img {
+				width: 285px;
+				height: 410px;
+			}
+			
+			.search .sale{
+				width: 100px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				/*border: 1px solid red;*/
+			}
+			.search .sale span{
+				/*margin-right: 20px;*/
+			}
+			.search .now{
+				font-size: 28px;
+				color: red;
+				margin-right: 20px;
+			}
+			.search .original{
+				font-size: 20px;
+				text-decoration: line-through;
+				color: grey;
+				margin-right: 50px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/page.css"/>
+	</head>
+	<body>
+		
+		<div class="search">
+			
+			
+			<ul class="top">
+				<li class="sousuo">
+					<em>排序:</em>
+					
+					<span>销量</span>
+					<span class="prize">价格
+						<em><img src="img/多边形one.png"/></em>
+						<em><img src="img/多边形two.png"/></em>
+					</span>
+					<span>评分最高</span>
+					
+				</li>
+				<li class="times">
+					<em>筛选:</em>
+					<span>全国</span>
+					<span>次日达</span>
+				</li>
+			</ul>
+			<!--展示列表-->
+			
+			<div class="shows" ng-repeat="item in movieArr track by $index">
+				
+				<span><img ng-src="{{item.images.large}}"/></span>
+				<h4>{{item.title}}</h4>
+				<p>{{item.original_title}}</p>
+				
+				<div class="sale">
+					<span class="now">★{{item.rating.average}}</span>
+					<span class="original">★{{item.rating.max}}</span>
+					<span ><img src="img/shop.png"/></span>
+				</div>
+				
+				
+			</div>
+			<!--2-->
+			<!--<div class="shows">
+				
+				<span><img src="img/putao.png"/></span>
+				<h4>新西兰佳沛黄金奇异果</h4>
+				<p>果肉绵密、花蜜般的甘甜百吃不厌</p>
+				
+				<div class="sale">
+					<span class="now">¥28.80</span>
+					<span class="original">¥40.00</span>
+					<span ><img src="img/shop.png"/></span>
+				</div>
+				
+				
+			</div>-->
+			<!--3-->
+			<!--<div class="shows">
+				
+				<span><img src="img/tao.png"/></span>
+				<h4>新西兰佳沛黄金奇异果</h4>
+				<p>果肉绵密、花蜜般的甘甜百吃不厌</p>
+				
+				<div class="sale">
+					<span class="now">¥28.80</span>
+					<span class="original">¥40.00</span>
+					<span ><img src="img/shop.png"/></span>
+				</div>
+				
+				
+			</div>-->
+			<!--4-->
+			<!--<div class="shows">
+				
+				<span><img src="img/putao.png"/></span>
+				<h4>新西兰佳沛黄金奇异果</h4>
+				<p>果肉绵密、花蜜般的甘甜百吃不厌</p>
+				
+				<div class="sale">
+					<span class="now">¥28.80</span>
+					<span class="original">¥40.00</span>
+					<span ><img src="img/shop.png"/></span>
+				</div>
+				
+				
+			</div>-->
+			<!--分页器-->
+			<div style="text-align: center;margin:40px auto;">
+				<div id="pager" class="pager clearfix"></div>
+			</div>
+			<div id="wraper" class="pagerHtmlWrap"></div>
+			<div style="text-align: center;">
+				<!--<div id="pager2" class="pager clearfix"></div>-->
+			</div>
+			
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/jquery.z-pager.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("#pager").zPager({
+				totalData: 60
+			});
+			$("#pager2").zPager({
+				url: 'pageData.json',
+				htmlBox: $('#wraper'),
+				btnShow: false
+			});
+			
+		</script>
+	</body>
+</html>

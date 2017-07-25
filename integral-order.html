@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>积分订单</title>
+		<link rel="stylesheet" type="text/css" href="css/page.css" />
+		<style type="text/css">
+			.integral-order {
+				width: 1080px;
+			}
+			
+			.lists {
+				width: 900px;
+				border: 1px solid lightgray;
+				margin: 20px auto;
+			}
+			
+			.list {
+				padding: 10px 0 10px 10px;
+				border-bottom: 1px solid lightgray;
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.list li:first-child {
+				font-size: 18px;
+				line-height: 55px;
+				margin-left: 10px;
+			}
+			
+			.order {
+				display: flex;
+				justify-content: space-between;
+				background: rgb(239, 239, 239);
+			}
+			
+			.order span {
+				margin: 10px 0 10px 5px;
+			}
+			
+			.juti {
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.juti li {
+				/*border: 1px solid red;*/
+			}
+			
+			.score {
+				padding-top: 40px;
+				border-right: 1px solid lightgray;
+				padding-right: 110px;
+				/*text-align: center;*/
+			}
+			
+			.imgs {
+				display: flex;
+				justify-content: space-between;
+				border-right: 1px solid lightgray;
+				padding-right: 150px;
+			}
+			
+			.imgs img {
+				margin: 20px 0px 20px 20px;
+			}
+			
+			.imgs span {
+				margin-left: 30px;
+				/*margin-right: 20px;*/
+				margin-top: 45px;
+			}
+			
+			.select button {
+				display: block;
+				width: 80px;
+				height: 30px;
+				border-radius: 5px;
+				background: rgb(234, 110, 6);
+				color: white;
+				outline: none;
+				border: none;
+			}
+			
+			.select span {
+				display: inline-block;
+				border-bottom: 1px solid green;
+				margin-bottom: 10px;
+			}
+			
+			.select span a {
+				color: green;
+			}
+			
+			.select {
+				padding-top: 20px;
+				text-align: center;
+				padding-right: 20px;
+			}
+			
+			.complete {
+				color: rgb(234, 110, 6);
+				padding-right: 20px;
+			}
+			
+			.list li span {
+				color: rgb(234, 110, 6);
+				padding-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-count')">我的账户</li>
+					<li ng-click="to('/my-order')">我的订单</li>
+					<li ng-click="to('/my-integral')">我的积分</li>
+					<li ng-click="to('/integral-order')" class="center-active">积分订单</li>
+					<li ng-click="to('/my-wallet')">我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/user-information')">个人资料</li>
+					<li ng-click="to('/address-manger')">地址管理</li>
+					<li ng-click="to('/my-fav')">我的收藏</li>
+					<li ng-click="to('/recent')">最近浏览</li>
+					<li ng-click="to('/psd-edit')">修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-msg')">我的消息</li>
+					<li ng-click="to('/feedback')">意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<div class="integral-order">
+					<ul class="list">
+						<li>积分订单</li>
+						<li>当前积分 : <span>240</span></li>
+					</ul>
+					<!--订单详情-->
+					<div class="lists">
+						<div class="order">
+							<span>订单号 : 1503196900000</span>
+							<span>下单时间 : 2015.04.09 18:06:06</span>
+							<span>订单状态 : <span class="complete">已完成</span></span>
+						</div>
+						<ul class="juti">
+							<li class="imgs">
+								<img src="img/图层ugly.png" />
+								<span>云南昭通丑苹果 6个装</span>
+								<span>6个装</span>
+								<span>x 1</span>
+							</li>
+							<li class="score">
+								<span>积分 : 58</span>
+							</li>
+							<li class="select">
+								<span><a href="">查看详情</a></span>
+								<button>删除订单</button>
+							</li>
+						</ul>
+					</div>
+					<!--2-->
+					<div class="lists">
+						<div class="order">
+							<span>订单号 : 1503196900000</span>
+							<span>下单时间 : 2015.04.09 18:06:06</span>
+							<span>订单状态 : <span class="complete">已完成</span></span>
+						</div>
+						<ul class="juti">
+							<li class="imgs">
+								<img src="img/图层ugly.png" />
+								<span>云南昭通丑苹果 6个装</span>
+								<span>6个装</span>
+								<span>x 1</span>
+							</li>
+							<li class="score">
+								<span>积分 : 58</span>
+							</li>
+							<li class="select">
+								<span><a href="">查看详情</a></span>
+								<button>删除订单</button>
+							</li>
+						</ul>
+					</div>
+					<!--3-->
+					<div class="lists">
+						<div class="order">
+							<span>订单号 : 1503196900000</span>
+							<span>下单时间 : 2015.04.09 18:06:06</span>
+							<span>订单状态 : <span class="complete">已完成</span></span>
+						</div>
+						<ul class="juti">
+							<li class="imgs">
+								<img src="img/图层ugly.png" />
+								<span>云南昭通丑苹果 6个装</span>
+								<span>6个装</span>
+								<span>x 1</span>
+							</li>
+							<li class="score">
+								<span>积分 : 58</span>
+							</li>
+							<li class="select">
+								<span><a href="">查看详情</a></span>
+								<button>删除订单</button>
+							</li>
+						</ul>
+					</div>
+					<!--分页器-->
+					<div style="text-align: center;margin:20px auto;">
+						<div id="pager" class="pager clearfix"></div>
+					</div>
+					<div id="wraper" class="pagerHtmlWrap"></div>
+					<div style="text-align: center;">
+						<!--<div id="pager2" class="pager clearfix"></div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/jquery.z-pager.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#pager").zPager({
+				totalData: 60
+			});
+			$("#pager2").zPager({
+				url: 'pageData.json',
+				htmlBox: $('#wraper'),
+				btnShow: false
+			});
+		//个人中心切换类名
+		$(".center-left li").on("click", function() {
+		$(".center-left li").removeClass("center-active");
+		$(this).addClass("center-active");
+		});
+		</script>
+	</body>
+</html>

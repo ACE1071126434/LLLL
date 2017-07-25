@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.psd-edit {
+				width: 1080px;
+				position: relative;
+			}
+			
+			.psd-edit .change {
+				border-bottom: 1px solid lightgray;
+			}
+			
+			.psd-edit .change h4 {
+				font-size: 18px;
+				line-height: 50px;
+				margin-left: 20px;
+			}
+			
+			.phone,
+			.ma,
+			.suiji,
+			.password,
+			.ps_one,
+			.ps_two {
+				margin-left: 20px;
+				margin-top: 20px;
+			}
+			
+			.password {
+				position: relative;
+			}
+			
+			.psd-edit .phone input {
+				background: rgb(247, 247, 247);
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			
+			.psd-edit .ps_one input {
+				background: rgb(247, 247, 247);
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			
+			.psd-edit .ps_two input {
+				background: rgb(247, 247, 247);
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			
+			.psd-edit .password input {
+				background: rgb(247, 247, 247);
+				width: 300px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+			}
+			
+			.psd-edit .ma input:nth-child(1) {
+				width: 80px;
+				outline: none;
+				border: 1px solid lightgray;
+				height: 40px;
+				background: rgb(247, 247, 247);
+			}
+			
+			.psd-edit .code {
+				width: 80px;
+				height: 35px;
+				margin-left: 30px;
+				outline: none;
+				border: 1px solid lightgrey;
+				text-align: center;
+				background: rgb(218, 250, 211);
+			}
+			
+			.psd-edit .ma {
+				display: inline-block;
+			}
+			
+			.psd-edit .btn {
+				margin: 20px 0 0 20px;
+				width: 150px;
+				height: 50px;
+				background: rgb(234, 110, 6);
+				border-radius: 10px;
+				outline: none;
+				color: white;
+				border: none;
+			}
+			
+			.psd-edit .click button {
+				color: green;
+				border: none;
+				outline: none;
+				background: white;
+			}
+			
+			.psd-edit .Btn {
+				width: 100px;
+				height: 35px;
+				position: absolute;
+				left: 190px;
+				top: 3px;
+				outline: none;
+				background: rgb(59, 126, 46);
+				/*background: rgba(0,0,0,0.1);*/
+				outline: none;
+				border: none;
+				color: white;
+			}
+			
+			.psd-edit .tan {
+				width: 300px;
+				height: 150px;
+				text-align: center;
+				position: absolute;
+				left: 640px;
+				top: 178px;
+				border-radius: 20px;
+				background: rgba(0, 0, 0, 0.1);
+				display: none;
+			}
+			
+			.psd-edit .tan strong {
+				background: url(img/对号.png) no-repeat;
+				background-size: cover;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				margin-top: 60px;
+				line-height: 30px;
+				/*background: rgb(234,110,6);*/
+				border: 1px solid lightgray;
+			}
+			
+			.psd-edit .tan span {
+				color: rgb(234, 110, 6);
+				font-size: 22px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	</head>
+
+	<body>
+		<div class="center-wrap">
+			<div class="center-left">
+				<h3>个人中心</h3>
+				<h4>交易管理&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-count')">我的账户</li>
+					<li ng-click="to('/my-order')">我的订单</li>
+					<li ng-click="to('/my-integral')">我的积分</li>
+					<li ng-click="to('/integral-order')">积分订单</li>
+					<li ng-click="to('/my-wallet')">我的钱包</li>
+				</ul>
+				<h4>会员资料&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/user-information')">个人资料</li>
+					<li ng-click="to('/address-manger')">地址管理</li>
+					<li ng-click="to('/my-fav')">我的收藏</li>
+					<li ng-click="to('/recent')">最近浏览</li>
+					<li ng-click="to('/psd-edit')" class="center-active">修改密码</li>
+				</ul>
+				<h4>站内信&nbsp;&nbsp;&gt;</h4>
+				<ul>
+					<li ng-click="to('/my-msg')">我的消息</li>
+					<li ng-click="to('/feedback')">意见反馈</li>
+				</ul>
+			</div>
+			<div class="center-right">
+				<!--中间内容-->
+				<div class="psd-edit">
+
+					<div class="change">
+						<h4>设定密码</h4>
+					</div>
+
+					<div class="phone"><input type="text" placeholder="请输入手机号" /></div>
+
+					<div class="ps_one"><input type="password" placeholder="请输入密码(6-20位号码字符)" /></div>
+					<div class="ps_two"><input type="password" placeholder="请再次输入密码确认" /></div>
+
+					<div class="ma">
+						<input type="text" placeholder="验证码" />
+						<input type="text" class="code" placeholder="8412" />
+					</div>
+
+					<span class="click"><button>看不清换一张</button></span>
+
+					<div class="password">
+						<input type="text" placeholder="手机验证码" />
+						<button class="Btn">获取验证码</button>
+					</div>
+
+					<button class="btn">提交修改</button>
+
+					<div class="tan">
+						<strong>️️</strong>
+						<span>恭喜您修改成功</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	//个人中心切换类名
+	$(".center-left li").on("click", function() {
+		$(".center-left li").removeClass("center-active");
+		$(this).addClass("center-active");
+	});
+	</script>
+
+</html>
