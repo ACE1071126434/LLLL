@@ -125,12 +125,23 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 	} else {
 		$scope.usersBol = false;
 	}
+	//加载首页商品
 	$http.get("http://localhost/LBW2/php/all.php").success(function(data) {
 		//console.log(data);
 		$scope.goodsArr = data.list;
 		$scope.IndexArr1 = data.list;
-		$scope.fridayArr = $scope.IndexArr1.slice(1,5);
-	})
+		$scope.fridayArr = $scope.IndexArr1.slice(1, 5);
+	});
+	//加载购物车内容
+	$http({
+		method: "get",
+		url: "http://localhost/LBW2/php/shopcar.php",
+		params: {
+			flag: "find"
+		}
+	}).success(function(data) {
+		$scope.shopCarArr = data;
+	});
 	$scope.search = function() {
 		$scope.searchRes = angular.element("#searches").val();
 		$location.path('/search');
@@ -178,23 +189,21 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 	//头部部分控制
 	$scope.bol = true;
 	//点击购物车, 加载购物车里的信息
+	$scope.carsArr = [];
 	$scope.shopCar = function() {
 		$scope.bol = false;
 		$http({
 			method: "get",
-			url:"http://localhost/LBW2/php/shopcar.php",
-			params:{
-				flag:"find"
+			url: "http://localhost/LBW2/php/shopcar.php",
+			params: {
+				flag: "find"
 			}
 		}).success(function(data) {
 			console.log(data);
-			for (var i = 0; i < data.length; i++) {
-				$scope.IndexArr1[data[i].goodsID].num = data[i].num;$scope.shopCarArr.push($scope.IndexArr1[data[i].goodsID]);
-			}
-			$location.path("/shopcar");
-			document.body.scrollTop = 0;
+			$scope.shopCarArr = data;
 		});
-		
+		$location.path("/shopcar");
+		document.body.scrollTop = 0;
 	}
 	$scope.toIndex = function() {
 		$location.path("/index");
@@ -204,6 +213,7 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 	$scope.toWhere = function(path) {
 		$location.path(path);
 		$scope.bol = true;
+		window.location.reload();
 		document.body.scrollTop = 0;
 	}
 	//首页分类
@@ -295,11 +305,18 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 			}
 			$scope.shopCarArr = arr;
 			$http({
-				method:"get",
-				url:"http://localhost/LBW2/php/shopcar.php",
-				params:{
-					flag:'add',
+				method: "get",
+				url: "http://localhost/LBW2/php/shopcar.php",
+				params: {
+					flag: 'add',
 					goodsID: $scope.IndexArr1[index].id,
+					shopName: $scope.IndexArr1[index].shopName,
+					goodsName: $scope.IndexArr1[index].goodsName,
+					showImgUrl: $scope.IndexArr1[index].showImgUrl,
+					intro: $scope.IndexArr1[index].intro,
+					standard: $scope.IndexArr1[index].standard,
+					oldPrice: $scope.IndexArr1[index].oldPrice,
+					nowPrice: $scope.IndexArr1[index].nowPrice,
 					num: $scope.IndexArr1[index].num
 				}
 			}).success(function(data) {
@@ -315,18 +332,25 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 		} else {
 			$scope.shopCarArr.push(obj);
 			$http({
-				method:"get",
-				url:"http://localhost/LBW2/php/shopcar.php",
-				params:{
+				method: "get",
+				url: "http://localhost/LBW2/php/shopcar.php",
+				params: {
 					flag: 'add',
 					goodsID: obj.id,
+					shopName: obj.shopName,
+					goodsName: obj.goodsName,
+					showImgUrl: obj.showImgUrl,
+					intro: obj.intro,
+					standard: obj.standard,
+					oldPrice: obj.oldPrice,
+					nowPrice: obj.nowPrice,
 					num: obj.num
 				}
 			}).success(function(data) {
 				console.log(data);
 			});
 		}
-		
+
 	};
 
 	//首页加载部分控制
@@ -350,8 +374,8 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 		});
 	}
 	//商品详情
-	$scope.intro = function(index,$event) {
-		
+	$scope.intro = function(index, $event) {
+
 		$scope.introObj = $scope.IndexArr1[index];
 		$scope.introImgSrc = $event.target.src;
 		$location.path('/goods-intro');

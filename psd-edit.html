@@ -220,6 +220,62 @@
 		$(".center-left li").removeClass("center-active");
 		$(this).addClass("center-active");
 	});
+	
+	//验证手机号码
+	$(".phone input").on("blur",function() {
+		var reg = /^1[3578]\d{9}$/;
+		var res = reg.test($(this).val());
+		if(res) {
+			$(".phone span").remove();
+		} else {
+			$(".phone span").remove();
+			$(".phone input").after("<span style='color: red;'>请输入正确的手机号码格式</span>");
+		}
+	});
+	
+	//验证第一次输入的密码是否符合要求
+	$(".ps_one input").on("blur",function() {
+		var reg = /^\w{8,20}$/;
+		var res =reg.test($(".ps_one input").val());
+		if(res) {
+			$(".ps_one span").remove();
+		} else {
+			$(".ps_one span").remove();
+			$(".ps_one input").after("<span style='color: red;'>请输入8~20数字/字符</span>");
+		}
+	});
+	//验证第二次密码是否相等
+	$(".ps_two input").on("blur",function() {
+		if($(this).val()!==$(".ps_one input").val()) {
+			$(".ps_two span").remove();
+			$(".ps_two input").after("<span style='color: red;'>密码不一致</span>");
+		} else {
+			$(".ps_two span").remove();
+		}
+	});
+	
+	$(".psd-edit .btn").on("click",function() {
+		
+		$.ajax({
+			type:"get",
+			url:"php/psd-edit.php",
+			data:{
+				phonenum: $(".phone input").val(),
+				password: $(".ps_one input").val()
+			},
+			success:function(data) {
+				if(data) {
+					window.sessionStorage.removeItem("phoneNum");
+					$(".tan").show().delay(1000).hide(100,function() {
+						window.location.replace("#/logoIn");
+						window.location.reload();
+					});
+				}
+			},
+			async:true
+		});
+	});
+	
 	</script>
 
 </html>

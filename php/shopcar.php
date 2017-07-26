@@ -1,15 +1,22 @@
 <?php
 $link = mysqli_connect("localhost", "root", "", "tenseven");
-
+mysqli_query($link, "set names utf8");
 $flag = $_GET["flag"];
 
 switch ($flag) {
 	case 'add' :
 		$goodsID = $_GET["goodsID"];
+		$shopName = $_GET["shopName"];
+		$goodsName = $_GET["goodsName"];
+		$showImgUrl = $_GET["showImgUrl"];
+		$intro = $_GET["intro"];
+		$standard = $_GET["standard"];
+		$oldPrice = $_GET["oldPrice"];
+		$nowPrice = $_GET["nowPrice"];
 		$num = $_GET["num"];
 
 		$query = "SELECT * FROM shopcar WHERE goodsID={$goodsID}";
-		mysqli_query($link, "set names utf8");
+		
 		$result = mysqli_query($link, $query);
 		$row = mysqli_fetch_assoc($result);
 		if ($row != NULL) {
@@ -18,7 +25,7 @@ switch ($flag) {
 			$result = mysqli_query($link, $query);
 			echo "成功增加";
 		} else {
-			$query = "INSERT INTO shopcar(id,goodsID,num) VALUES(NULL,{$goodsID},{$num})";
+			$query = "INSERT INTO shopcar(id,goodsID,shopName,goodsName,showImgUrl,intro,standard,oldPrice,nowPrice,num) VALUES(NULL,{$goodsID},'{$shopName}','{$goodsName}','{$showImgUrl}','{$intro}','{$standard}','{$oldPrice}','{$nowPrice}',{$num})";
 			$result = mysqli_query($link, $query);
 			echo "成功加入购物车";
 		}
