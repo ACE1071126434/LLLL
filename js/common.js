@@ -109,14 +109,6 @@ app.controller("errorCtrl", function($scope) {
 	document.body.scrollTop = 0;
 });
 app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
-	//	$http({
-	//		url:"http://localhost/LBW2/php/all.php",
-	//		method:"get",
-	//		dataType:"json",
-	//		success:function(data) {
-	//			console.log(data);
-	//		}
-	//	})
 	//获取登录用户的信息
 	$scope.usersBol = false;
 	$scope.phoneNum = window.sessionStorage.phoneNum;
@@ -126,8 +118,7 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 		$scope.usersBol = false;
 	}
 	//加载首页商品
-	$http.get("http://localhost/LBW2/php/all.php").success(function(data) {
-		//console.log(data);
+	$http.get("php/all.php").success(function(data) {
 		$scope.goodsArr = data.list;
 		$scope.IndexArr1 = data.list;
 		$scope.fridayArr = $scope.IndexArr1.slice(1, 5);
@@ -135,7 +126,7 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 	//加载购物车内容
 	$http({
 		method: "get",
-		url: "http://localhost/LBW2/php/shopcar.php",
+		url: "php/shopcar.php",
 		params: {
 			flag: "find"
 		}
@@ -146,7 +137,7 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 		$scope.searchRes = angular.element("#searches").val();
 		$location.path('/search');
 		$http({
-			url: "http://localhost/LBW2/php/search.php",
+			url: "php/search.php",
 			method: 'get',
 			params: {
 				name: $scope.searchRes
@@ -158,7 +149,7 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 	}
 	$scope.movieFilter = function(index) {
 		$http({
-			url: "http://localhost/LBW2/php/search.php",
+			url: "php/search.php",
 			method: 'get',
 			params: {
 				name: $scope.movieClassArr[index]
@@ -171,7 +162,7 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 	}
 	$scope.movieTop = function(tag) {
 		$http({
-			url: "http://localhost/LBW2/php/search.php",
+			url: "php/search.php",
 			method: 'get',
 			params: {
 				name: tag
@@ -194,7 +185,7 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 		$scope.bol = false;
 		$http({
 			method: "get",
-			url: "http://localhost/LBW2/php/shopcar.php",
+			url: "php/shopcar.php",
 			params: {
 				flag: "find"
 			}
@@ -306,7 +297,7 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 			$scope.shopCarArr = arr;
 			$http({
 				method: "get",
-				url: "http://localhost/LBW2/php/shopcar.php",
+				url: "php/shopcar.php",
 				params: {
 					flag: 'add',
 					goodsID: $scope.IndexArr1[index].id,
@@ -333,7 +324,7 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 			$scope.shopCarArr.push(obj);
 			$http({
 				method: "get",
-				url: "http://localhost/LBW2/php/shopcar.php",
+				url: "php/shopcar.php",
 				params: {
 					flag: 'add',
 					goodsID: obj.id,
@@ -350,14 +341,12 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 				console.log(data);
 			});
 		}
-
 	};
-
 	//首页加载部分控制
 	$scope.to = function(path) {
 		//加载地址信息
 		if(path == '/address-manger') {
-			$http.get("http://localhost/LBW2/php/address.php?flag=all").success(function(data) {
+			$http.get("php/address.php?flag=all").success(function(data) {
 				//console.log(data);
 				$scope.addressArr = data.list;
 			});
@@ -368,7 +357,7 @@ app.controller("appCtrl", function($scope, $location, $http, $routeParams) {
 	//删除地址
 	$scope.removeAddress = function(index) {
 		var id = $scope.addressArr[index].id;
-		$http.get("http://localhost/LBW2/php/address.php?flag=del&id=" + id).success(function(data) {
+		$http.get("php/address.php?flag=del&id=" + id).success(function(data) {
 			//console.log(data);
 			$scope.addressArr.splice(index, 1);
 		});
